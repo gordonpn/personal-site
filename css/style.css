@@ -5,15 +5,15 @@
 }
 
 .main-background {
-    height: 100%;
-    width: 100%;
     background: rgb(254, 211, 159);
     background: linear-gradient(162deg, rgba(254, 211, 159, 1) 0%, rgba(246, 238, 201, 1) 67%);
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-position: center;
-    background-attachment: fixed;
+    height: 100%;
     margin: 0;
+    width: 100%;
 }
 
 .not-found-background {
@@ -21,9 +21,9 @@
 }
 
 .center-text {
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
 
@@ -37,14 +37,8 @@ h1 {
     font-size: 1.5em;
 }
 
-li {
-    list-style-type: none;
-    display: inline;
-    padding: 1.05em;
-}
 
 .fa-li {
-    /*left: -1.1em;*/
     position: static;
 }
 
@@ -72,37 +66,18 @@ a:hover {
     background-size: 14px 70px;
 }
 
-@media only screen and (max-width: 600px) {
+@media (min-width: 320px) and (max-width: 1024px) {
     li {
         display: inherit;
-        padding: 1em;
+        padding: 5px;
     }
+
 }
 
-@media only screen and (device-width: 768px) {
+@media (min-width: 1025px) {
     li {
-        display: inherit;
-        padding: 1em;
-    }
-}
-
-@media only screen
-and (min-device-width: 375px)
-and (max-device-width: 812px)
-and (-webkit-device-pixel-ratio: 3)
-and (orientation: landscape) {
-    li {
-        display: inherit;
-        padding: 1em;
-    }
-}
-
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (orientation: landscape) {
-    li {
-        display: inherit;
+        display: inline;
+        list-style-type: none;
         padding: 1em;
     }
 }
