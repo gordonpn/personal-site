@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:700&display=swap');
+
+* {
+}
+
+.main-background {
+    height: 100%;
+    width: 100%;
+    background: rgb(254, 211, 159);
+    background: linear-gradient(162deg, rgba(254, 211, 159, 1) 0%, rgba(246, 238, 201, 1) 67%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.not-found-background {
+    background: #8ec5fc;
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+}
+
+.link-list {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5em;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+    padding: 1.05em;
+}
+
+.fa-li {
+    left: -1.1em;
+    position: static;
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    display: inline;
+}
+
+a:visited {
+    color: black;
+}
+
+:root {
+    --mainColor: #ff9800;
+}
+
+a {
+    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%) repeat-x 0 100%;
+    background-size: 4px 4px;
+    color: #000;
+    text-decoration: none;
+    transition: background-size .2s;
+}
+
+a:hover {
+    background-size: 14px 70px;
+}
