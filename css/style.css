@@ -44,7 +44,7 @@ li {
 }
 
 .fa-li {
-    left: -1.1em;
+    /*left: -1.1em;*/
     position: static;
 }
 
@@ -70,4 +70,39 @@ a {
 
 a:hover {
     background-size: 14px 70px;
+}
+
+@media only screen and (max-width: 600px) {
+    li {
+        display: inherit;
+        padding: 1em;
+    }
+}
+
+@media only screen and (device-width: 768px) {
+    li {
+        display: inherit;
+        padding: 1em;
+    }
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (-webkit-device-pixel-ratio: 3)
+and (orientation: landscape) {
+    li {
+        display: inherit;
+        padding: 1em;
+    }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape) {
+    li {
+        display: inherit;
+        padding: 1em;
+    }
 }
