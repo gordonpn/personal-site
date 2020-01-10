@@ -65,16 +65,16 @@ a {
 a:hover {
     background-size: 14px 70px;
 }
-
-@media (min-width: 320px) and (max-width: 1242px) {
+/*(min-width: 320px) and (max-width: 1242px)*/
+@media (orientation: portrait) {
     li {
         display: inherit;
         padding: 5px;
     }
 
 }
-
-@media (min-width: 1243px) {
+/*min-width: 1243px*/
+@media (orientation: landscape) {
     li {
         display: inline;
         list-style-type: none;
