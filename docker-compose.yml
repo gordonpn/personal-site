@@ -10,6 +10,8 @@ services:
     restart: always
     volumes:
       - ./public:/static
+    healthcheck:
+      test: curl --fail -s http://localhost:80/ || exit 1
     networks:
       - web
     labels:
