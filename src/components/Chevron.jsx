@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
     bottom: 0,
     left: "50%",
     animationName: "$bounceAnimation",
-    animationDuration: "4s",
+    animationDuration: "5s",
     animationIterationCount: "infinite",
     animationTimingFunction: "cubic-bezier(0.280, 0.840, 0.420, 1)",
   },
