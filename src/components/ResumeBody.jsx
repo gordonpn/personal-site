@@ -4,36 +4,37 @@ import { createUseStyles } from "react-jss";
 import { Grid, Image, Segment, Header } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHandHoldingHeart,
-  faBuilding,
-  faUniversity,
   faAward,
+  faBuilding,
+  faHandHoldingHeart,
+  faUniversity,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import "./ResumeBody.css";
+import "./Bodies.css";
 
 const useStyles = createUseStyles({
-  resumeBody: {
-    background: "#f9f4de",
+  outerContainer: {
+    background:
+      "linear-gradient(0deg, rgba(254,211,159,1) 0%, rgba(246,238,201,1) 100%)",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     margin: 0,
-    width: "100vw",
     overflow: "auto",
+    width: "100vw",
   },
   innerContainer: {
-    width: "90%",
-    paddingTop: "50px",
-    overflow: "auto",
     marginBottom: "0px",
+    overflow: "auto",
+    paddingTop: "50px",
+    width: "97%",
   },
 });
 
 export default function ResumeBody() {
   const classes = useStyles();
   return (
-    <Container fluid className={classes.resumeBody}>
+    <Container fluid className={classes.outerContainer}>
       <Container fluid className={classes.innerContainer}>
         <Header size="huge" textAlign="center">
           About Myself

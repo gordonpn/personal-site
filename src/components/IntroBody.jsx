@@ -8,7 +8,7 @@ import Chevron from "./Chevron";
 const useStyles = createUseStyles({
   mainBackground: {
     background:
-      "linear-gradient(162deg,rgba(254,211,159,1) 0%,rgba(246,238,201,1) 67%)",
+      "linear-gradient(180deg, rgba(254,211,159,1) 0%,rgba(246,238,201,1) 67%)",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",

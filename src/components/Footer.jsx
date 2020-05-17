@@ -5,20 +5,21 @@ import "./Footer.css";
 
 const useStyles = createUseStyles({
   footer: {
+    background:
+      "linear-gradient(180deg, rgba(254,224,208,1) 0%, rgba(246,225,201,1) 100%)",
     fontFamily: "Roboto Condensed, sans-serif",
     fontSize: "1.2rem",
-    width: "100vw",
     height: "5vh",
-    background: "#f6f6f6",
-    textAlign: "center",
     overflow: "auto",
+    textAlign: "center",
+    width: "100vw",
   },
   copyright: {
-    width: "75%",
     left: "50%",
     position: "relative",
     top: "50%",
     transform: "translate(-50%, -50%)",
+    width: "75%",
   },
 });
 

@@ -6,6 +6,7 @@ import IntroBody from "./components/IntroBody";
 import Footer from "./components/Footer";
 import ResumeBody from "./components/ResumeBody";
 import ProjectsBody from "./components/ProjectsBody";
+import TechBody from "./components/TechBody";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <IntroBody />
       <ResumeBody />
       <ProjectsBody />
+      <TechBody />
       <Footer />
     </>
   );

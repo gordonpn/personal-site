@@ -2,12 +2,11 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import { createUseStyles } from "react-jss";
 import { Header, Image } from "semantic-ui-react";
-import "./Bodies.css";
 
 const useStyles = createUseStyles({
   outerContainer: {
     background:
-      "linear-gradient(180deg, rgba(254,211,159,1) 0%, rgba(246,225,201,1) 100%)",
+      "linear-gradient(0deg, rgba(254,224,208,1) 0%, rgba(246,225,201,1) 100%)",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -23,17 +22,15 @@ const useStyles = createUseStyles({
   },
 });
 
-export default function ProjectsBody() {
+export default function TechBody() {
   const classes = useStyles();
   return (
     <Container fluid className={classes.outerContainer}>
       <Container fluid className={classes.innerContainer}>
         <Header size="huge" textAlign="center">
-          Projects
+          Tech Stack
         </Header>
-        <Image src="https://react.semantic-ui.com/images/wireframe/text-image.png" />
-        <Image src="https://react.semantic-ui.com/images/wireframe/text-image.png" />
-        <Image src="https://react.semantic-ui.com/images/wireframe/text-image.png" />
+        <Image src="https://react.semantic-ui.com/images/wireframe/image-square.png" />
       </Container>
     </Container>
   );
