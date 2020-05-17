@@ -27,8 +27,8 @@ export default function Footer() {
   return (
     <Container fluid className={classes.footer}>
       <p className={classes.copyright}>
-        {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-        &copy; {new Date().getFullYear()}
+        &copy;
+        {` ${new Date().getFullYear()}`}
         {", "}
         Gordon Pham-Nguyen
       </p>

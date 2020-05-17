@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+.ui.grid {
+  margin-bottom: 0;
+}
+
+.ui.header {
+  font-family: "Noto Sans", "Helvetica Neue", sans-serif;
+}
