@@ -6,7 +6,7 @@ import QuickLinks from "./QuickLinks";
 import Chevron from "./Chevron";
 
 const useStyles = createUseStyles({
-  root: {
+  mainBackground: {
     background:
       "linear-gradient(162deg,rgba(254,211,159,1) 0%,rgba(246,238,201,1) 67%)",
     backgroundPosition: "center",
@@ -16,12 +16,24 @@ const useStyles = createUseStyles({
     margin: 0,
     width: "100vw",
   },
+  nameTitle: {
+    width: "50%",
+    left: "50%",
+    position: "absolute",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+  },
   name: {
     fontFamily: "Pacifico, cursive",
     fontSize: "4rem",
-    left: "50%",
     letterSpacing: "-0.15rem",
-    position: "absolute",
+  },
+  title: {
+    fontFamily: "PT Mono, monospace",
+    fontSize: "1.5rem",
+    lineHeight: "-1.5em",
+    left: "65%",
+    position: "relative",
     top: "50%",
     transform: "translate(-50%, -50%)",
   },
@@ -30,8 +42,11 @@ const useStyles = createUseStyles({
 export default function IntroBody() {
   const classes = useStyles();
   return (
-    <Container fluid className={classes.root}>
-      <p className={classes.name}>Gordon Pham-Nguyen</p>
+    <Container fluid className={classes.mainBackground}>
+      <Container className={classes.nameTitle}>
+        <p className={classes.name}>Gordon Pham-Nguyen</p>
+        <p className={classes.title}>Software Developer</p>
+      </Container>
       <QuickLinks />
       <Chevron />
     </Container>
