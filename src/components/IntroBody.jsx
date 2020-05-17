@@ -22,6 +22,7 @@ const useStyles = createUseStyles({
     position: "absolute",
     top: "50%",
     transform: "translate(-50%, -50%)",
+    textAlign: "center",
   },
   name: {
     fontFamily: "Pacifico, cursive",
@@ -32,7 +33,7 @@ const useStyles = createUseStyles({
     fontFamily: "PT Mono, monospace",
     fontSize: "1.5rem",
     lineHeight: "-1.5em",
-    left: "65%",
+    left: "50%",
     position: "relative",
     top: "50%",
     transform: "translate(-50%, -50%)",
