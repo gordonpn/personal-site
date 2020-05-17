@@ -3,6 +3,7 @@ import { createUseStyles } from "react-jss";
 import Container from "react-bootstrap/Container";
 import "./IntroBody.css";
 import QuickLinks from "./QuickLinks";
+import Chevron from "./Chevron";
 
 const useStyles = createUseStyles({
   root: {
@@ -32,6 +33,7 @@ export default function IntroBody() {
     <Container fluid className={classes.root}>
       <p className={classes.name}>Gordon Pham-Nguyen</p>
       <QuickLinks />
+      <Chevron />
     </Container>
   );
 }
