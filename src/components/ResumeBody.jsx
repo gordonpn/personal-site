@@ -1,7 +1,6 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import { createUseStyles } from "react-jss";
-import { Grid, Header, Image, Segment } from "semantic-ui-react";
+import { Container, Grid, Header, Image, Segment } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAward,
@@ -96,19 +95,7 @@ export default function ResumeBody() {
                 <FontAwesomeIcon icon={faUser} />
                 {" Introduction"}
               </Header>
-              <p>
-                Words like these will indeed be spoken to you, if only your
-                perseverance shall have an object that is worth while, if only
-                you will not have to do or to suffer anything unworthy of a good
-                man; besides, a good man will not waste himself upon mean and
-                discreditable work or be busy merely for the sake of being busy.
-                Neither will he, as you imagine, become so involved in ambitious
-                schemes that he will have continually to endure their ebb and
-                flow. Nay, when he sees the dangers, uncertainties, and hazards
-                in which he was formerly tossed about, he will withdraw—not
-                turning his back to the foe, but falling back little by little
-                to a safe position.
-              </p>
+              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
             </Segment>
           </Grid.Column>
           <Grid.Column>
@@ -117,18 +104,7 @@ export default function ResumeBody() {
                 <FontAwesomeIcon icon={faBuilding} />
                 {" Work experience"}
               </Header>
-              <p>
-                Peace you can claim for yourself without being disliked by
-                anyone, without any sense of loss, and without any pangs of
-                spirit. For what will you leave behind you that you can imagine
-                yourself reluctant to leave? Your clients? But none of these men
-                courts you for yourself; they merely court something from you.
-                People used to hunt friends, but now they hunt pelf; if a lonely
-                old man changes his will, the morning-caller transfers himself
-                to another door. Great things cannot be bought for small sums;
-                so reckon up whether it is preferable to leave your own true
-                self, or merely some of your belongings.
-              </p>
+              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
             </Segment>
           </Grid.Column>
           <Grid.Column>

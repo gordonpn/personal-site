@@ -1,7 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-import Container from "react-bootstrap/Container";
 import "./IntroBody.css";
+import { Container } from "semantic-ui-react";
 import QuickLinks from "./QuickLinks";
 import Chevron from "./Chevron";
 

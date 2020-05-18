@@ -1,7 +1,6 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import { createUseStyles } from "react-jss";
-import { Grid, Header, Image, Segment } from "semantic-ui-react";
+import { Container, Grid, Header, Image, Segment } from "semantic-ui-react";
 import "./Bodies.css";
 
 const useStyles = createUseStyles({
@@ -23,6 +22,47 @@ const useStyles = createUseStyles({
   },
 });
 
+const data = [
+  {
+    name: "Youtube Downloader",
+    description: "Cross-platform YouTube downloader app built with Electron.js",
+    link: "https://github.com/gordonpn/youtube-downloader-electron",
+    screenshot:
+      "https://github.com/gordonpn/youtube-downloader-electron/blob/master/doc/recording.gif?raw=true",
+  },
+  {
+    name: "Name",
+    description: "",
+    link: "",
+    screenshot: "https://react.semantic-ui.com/images/wireframe/image.png",
+  },
+  {
+    name: "Name",
+    description: "",
+    link: "",
+    screenshot: "https://react.semantic-ui.com/images/wireframe/image.png",
+  },
+  {
+    name: "Name",
+    description: "",
+    link: "",
+    screenshot: "https://react.semantic-ui.com/images/wireframe/image.png",
+  },
+];
+
+const loadData = data.map((project) => {
+  return (
+    <>
+      <Grid.Column>
+        <Segment raised>
+          <Header size="huge">{project.name}</Header>
+          <Image src={project.screenshot} />
+        </Segment>
+      </Grid.Column>
+    </>
+  );
+});
+
 export default function ProjectsBody() {
   const classes = useStyles();
 
@@ -33,24 +73,7 @@ export default function ProjectsBody() {
           Projects
         </Header>
         <Grid stackable columns={3}>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">Name</Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph-alt.png" />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">Name</Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph-alt.png" />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">Name</Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph-alt.png" />
-            </Segment>
-          </Grid.Column>
+          {loadData}
         </Grid>
       </Container>
     </Container>
