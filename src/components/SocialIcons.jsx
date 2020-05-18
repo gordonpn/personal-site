@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { createUseStyles } from "react-jss";
+import * as PropTypes from "prop-types";
 
 const useStyles = createUseStyles({
   icons: {
@@ -11,8 +12,9 @@ const useStyles = createUseStyles({
   },
 });
 
-export default function SocialIcons() {
+export default function SocialIcons(props) {
   const classes = useStyles();
+  const { size } = props;
   return (
     <>
       <a
@@ -22,7 +24,7 @@ export default function SocialIcons() {
       >
         <FontAwesomeIcon
           icon={faLinkedinIn}
-          size="3x"
+          size={size}
           className={classes.icons}
         />
       </a>
@@ -31,7 +33,11 @@ export default function SocialIcons() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FontAwesomeIcon icon={faGithub} size="3x" className={classes.icons} />
+        <FontAwesomeIcon
+          icon={faGithub}
+          size={size}
+          className={classes.icons}
+        />
       </a>
       <a
         href="mailto:contact@gordon-pn.com"
@@ -40,10 +46,18 @@ export default function SocialIcons() {
       >
         <FontAwesomeIcon
           icon={faEnvelope}
-          size="3x"
+          size={size}
           className={classes.icons}
         />
       </a>
     </>
   );
 }
+
+SocialIcons.propTypes = {
+  size: PropTypes.string,
+};
+
+SocialIcons.defaultProps = {
+  size: "3x",
+};

@@ -1,15 +1,15 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { createUseStyles } from "react-jss";
-import { Grid, Image, Segment, Header } from "semantic-ui-react";
+import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAward,
   faBuilding,
+  faCode,
   faHandHoldingHeart,
   faUniversity,
   faUser,
-  faCode,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Bodies.css";
 
@@ -34,6 +34,55 @@ const useStyles = createUseStyles({
 
 export default function ResumeBody() {
   const classes = useStyles();
+
+  const data = {
+    tech: {
+      "Languages & Frameworks": [
+        "java",
+        "python",
+        "javascript",
+        "go",
+        "ruby",
+        "react",
+        "node-dot-js",
+        "html5",
+        "css3",
+        "flask",
+        "electron",
+      ],
+      Databases: ["mongodb", "postgresql"],
+      "CI/CD": ["drone", "jenkins", "githubactions", "travisci"],
+      Platforms: ["docker", "github", "linux", "ubuntu", "raspberrypi"],
+      Tools: [
+        "git",
+        "gulp",
+        "npm",
+        "apachemaven",
+        "jetbrains",
+        "visualstudiocode",
+        "vim",
+        "cloudflare",
+      ],
+    },
+  };
+
+  const technologies = Object.keys(data.tech).map((category) => {
+    return (
+      <>
+        <Header size="small">{category}</Header>
+        <Image.Group size="mini">
+          {data.tech[category].map((item) => {
+            return (
+              <Image
+                src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${item}.svg`}
+              />
+            );
+          })}
+        </Image.Group>
+      </>
+    );
+  });
+
   return (
     <Container fluid className={classes.outerContainer}>
       <Container fluid className={classes.innerContainer}>
@@ -118,51 +167,7 @@ export default function ResumeBody() {
               <Header size="medium">
                 Some technologies I am familiar with
               </Header>
-              <Header size="small">Languages & Frameworks</Header>
-              <Image.Group size="mini">
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/java.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/python.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/javascript.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/go.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ruby.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/react.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/node-dot-js.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/html5.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flask.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/electron.svg" />
-              </Image.Group>
-              <Header size="small">Databases</Header>
-              <Image.Group size="mini">
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mongodb.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/postgresql.svg" />
-              </Image.Group>
-              <Header size="small">CI/CD</Header>
-              <Image.Group size="mini">
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/drone.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jenkins.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/travisci.svg" />
-              </Image.Group>
-              <Header size="small">Platforms</Header>
-              <Image.Group size="mini">
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ubuntu.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/raspberrypi.svg" />
-              </Image.Group>
-              <Header size="small">Tools</Header>
-              <Image.Group size="mini">
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/git.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gulp.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/npm.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apachemaven.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jetbrains.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visualstudiocode.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vim.svg" />
-                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg" />
-              </Image.Group>
+              {technologies}
             </Segment>
           </Grid.Column>
         </Grid>

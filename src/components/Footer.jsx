@@ -29,7 +29,7 @@ export default function Footer() {
   const classes = useStyles();
   return (
     <Container fluid className={classes.footer}>
-      <SocialIcons />
+      <SocialIcons size="2x" />
       <Container fluid className={classes.copyrightContainer}>
         <p className={classes.copyright}>
           &copy;

@@ -21,6 +21,7 @@ const useStyles = createUseStyles({
     left: "50%",
     position: "absolute",
     top: "50%",
+    marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     textAlign: "center",
   },
@@ -47,8 +48,8 @@ export default function IntroBody() {
       <Container className={classes.nameTitle}>
         <p className={classes.name}>Gordon Pham-Nguyen</p>
         <p className={classes.title}>Software Developer</p>
+        <QuickLinks />
       </Container>
-      <QuickLinks />
       <Chevron />
     </Container>
   );
