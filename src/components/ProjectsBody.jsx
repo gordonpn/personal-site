@@ -6,6 +6,7 @@ import {
   Grid,
   Header,
   Image,
+  Label,
   Segment,
 } from "semantic-ui-react";
 import "./Bodies.css";
@@ -35,11 +36,12 @@ const data = [
   {
     name: "Youtube Downloader",
     description:
-      "Cross-platform YouTube downloader app built with Electron.js. Downloads in parallel. Format in video or audio in MP3.",
+      "Cross-platform YouTube downloader app. Downloads in parallel. Format in video or audio in MP3.",
     link: "https://github.com/gordonpn/youtube-downloader-electron",
     url: "",
     screenshot:
       "https://github.com/gordonpn/youtube-downloader-electron/blob/master/doc/recording.gif?raw=true",
+    tags: ["JavaScript", "Node.js", "Electron.js", "Desktop"],
   },
   {
     name: "Reddit Slack Bot",
@@ -50,6 +52,7 @@ const data = [
     url: "",
     screenshot:
       "https://github.com/gordonpn/reddit-slack-bot/blob/master/docs/screenshot.png?raw=true",
+    tags: ["Python", "Docker", "MongoDB"],
   },
   {
     name: "JavaScript Boilerplate CLI Tool",
@@ -59,6 +62,7 @@ const data = [
     link: "https://github.com/gordonpn/create-boilerplate-cli",
     url: "",
     screenshot: "https://asciinema.org/a/4UemVZE29SWWrfV9Nt2jSo2n2.svg",
+    tags: ["Ruby"],
   },
   {
     name: "Hot Red Flag Deals",
@@ -67,15 +71,16 @@ const data = [
     link: "https://github.com/gordonpn/hot-flag-deals",
     url: "",
     screenshot: "",
+    tags: ["Go", "PostgreSQL", "Docker"],
   },
   {
     name: "Moodle Scraper",
     description:
-      "Automatically scrape and convert files from Concordia Moodle, saves time from manually browsing and downloading! " +
-      "Runs as a Docker container as well.",
+      "Automatically scrape and convert files from Concordia Moodle, saves time from manually browsing and downloading!",
     link: "https://github.com/gordonpn/moodle-scraper",
     url: "",
     screenshot: "",
+    tags: ["Python", "Docker"],
   },
   {
     name: "Internet Speed Tests Visualized",
@@ -85,6 +90,7 @@ const data = [
     link: "https://github.com/gordonpn/isp-speed-expectation-vs-reality",
     url: "",
     screenshot: "",
+    tags: ["JavaScript", "Python", "Node.js", "React.js", "Docker", "MongoDB"],
   },
   {
     name: "Conventions Documentation",
@@ -94,14 +100,15 @@ const data = [
     link: "https://github.com/gordonpn/git-conventions-guide",
     url: "",
     screenshot: "",
+    tags: ["Markdown"],
   },
   {
     name: "Personal Site",
-    description:
-      "Last, but not least! This site to showcase myself, built with React.js.",
+    description: "Last, but not least! This site to showcase myself.",
     link: "https://github.com/gordonpn/personal-site",
     url: "http://gordon-pn.com/",
     screenshot: "",
+    tags: ["JavaScript", "React.js"],
   },
 ];
 
@@ -130,6 +137,15 @@ const loadData = data.map((project) => {
           {project.description ? (
             <>
               <p>{project.description}</p>
+              <Label.Group size="mini">
+                {project.tags.map((value) => {
+                  return (
+                    <>
+                      <Label>{value}</Label>
+                    </>
+                  );
+                })}
+              </Label.Group>
               <Divider />
             </>
           ) : (
