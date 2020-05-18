@@ -31,11 +31,16 @@ const useStyles = createUseStyles({
   },
 });
 
-export default function ResumeBody() {
-  const classes = useStyles();
-
-  const data = {
-    tech: {
+const data = [
+  { header: "Introduction", icon: faUser },
+  { header: "Work Experience", icon: faBuilding },
+  { header: "Volunteering", icon: faHandHoldingHeart },
+  { header: "Education", icon: faUniversity },
+  { header: "Award", icon: faAward },
+  {
+    header: "Technologies",
+    icon: faCode,
+    content: {
       "Languages & Frameworks": [
         "java",
         "python",
@@ -63,24 +68,68 @@ export default function ResumeBody() {
         "cloudflare",
       ],
     },
-  };
+  },
+];
 
-  const technologies = Object.keys(data.tech).map((category) => {
-    return (
-      <>
-        <Header size="small">{category}</Header>
-        <Image.Group size="mini">
-          {data.tech[category].map((item) => {
-            return (
-              <Image
-                src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${item}.svg`}
-              />
-            );
-          })}
-        </Image.Group>
-      </>
-    );
-  });
+const loadTech = Object.keys(data[5].content).map((category) => {
+  return (
+    <>
+      <Header size="small">{category}</Header>
+      <Image.Group size="mini">
+        {data[5].content[category].map((item) => {
+          return (
+            <Image
+              src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${item}.svg`}
+            />
+          );
+        })}
+      </Image.Group>
+    </>
+  );
+});
+
+const loadData = data.map((item) => {
+  return (
+    <>
+      <Grid.Column>
+        <Segment>
+          <Header size="huge">
+            <FontAwesomeIcon icon={item.icon} />
+            {` ${item.header}`}
+          </Header>
+          {(() => {
+            switch (item.header) {
+              case "Introduction":
+                return <></>;
+              case "Work Experience":
+                return <></>;
+              case "Volunteering":
+                return <></>;
+              case "Education":
+                return <></>;
+              case "Award":
+                return <></>;
+              case "Technologies":
+                return (
+                  <>
+                    <Header size="medium">
+                      Some technologies I am familiar with
+                    </Header>
+                    {loadTech}
+                  </>
+                );
+              default:
+                return <></>;
+            }
+          })()}
+        </Segment>
+      </Grid.Column>
+    </>
+  );
+});
+
+export default function ResumeBody() {
+  const classes = useStyles();
 
   return (
     <Container fluid className={classes.outerContainer}>
@@ -89,63 +138,7 @@ export default function ResumeBody() {
           About Myself
         </Header>
         <Grid stackable columns={2}>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">
-                <FontAwesomeIcon icon={faUser} />
-                {" Introduction"}
-              </Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">
-                <FontAwesomeIcon icon={faBuilding} />
-                {" Work experience"}
-              </Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">
-                <FontAwesomeIcon icon={faHandHoldingHeart} />
-                {" Volunteering"}
-              </Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">
-                <FontAwesomeIcon icon={faUniversity} />
-                {" Education"}
-              </Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">
-                <FontAwesomeIcon icon={faAward} />
-                {" Awards"}
-              </Header>
-              <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment>
-              <Header size="huge">
-                <FontAwesomeIcon icon={faCode} />
-                {" Technologies"}
-              </Header>
-              <Header size="medium">
-                Some technologies I am familiar with
-              </Header>
-              {technologies}
-            </Segment>
-          </Grid.Column>
+          {loadData}
         </Grid>
       </Container>
     </Container>

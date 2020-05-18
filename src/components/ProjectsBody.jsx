@@ -42,14 +42,6 @@ const data = [
       "https://github.com/gordonpn/youtube-downloader-electron/blob/master/doc/recording.gif?raw=true",
   },
   {
-    name: "Hot Red Flag Deals",
-    description:
-      "Software as a service scraping the crowdsourced Hot Deals forums and delivering newsletter emails on trending deals.",
-    link: "https://github.com/gordonpn/hot-flag-deals",
-    url: "",
-    screenshot: "",
-  },
-  {
     name: "Reddit Slack Bot",
     description:
       "I believe Reddit has a lot of good content, but it requires manual sifting through, with this bot I " +
@@ -58,6 +50,23 @@ const data = [
     url: "",
     screenshot:
       "https://github.com/gordonpn/reddit-slack-bot/blob/master/docs/screenshot.png?raw=true",
+  },
+  {
+    name: "JavaScript Boilerplate CLI Tool",
+    description:
+      "JS projects have so much tooling! This is a commandline tool that generates a Node.js or React.js project with some important tools. " +
+      "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
+    link: "https://github.com/gordonpn/create-boilerplate-cli",
+    url: "",
+    screenshot: "https://asciinema.org/a/4UemVZE29SWWrfV9Nt2jSo2n2.svg",
+  },
+  {
+    name: "Hot Red Flag Deals",
+    description:
+      "Software as a service scraping the crowdsourced Hot Deals forums and delivering newsletter emails on trending deals.",
+    link: "https://github.com/gordonpn/hot-flag-deals",
+    url: "",
+    screenshot: "",
   },
   {
     name: "Moodle Scraper",
@@ -76,15 +85,6 @@ const data = [
     link: "https://github.com/gordonpn/isp-speed-expectation-vs-reality",
     url: "",
     screenshot: "",
-  },
-  {
-    name: "JavaScript Boilerplate CLI Tool",
-    description:
-      "JS projects have so much tooling! This is a commandline tool that generates a Node.js or React.js project with some important tools. " +
-      "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
-    link: "https://github.com/gordonpn/create-boilerplate-cli",
-    url: "",
-    screenshot: "https://asciinema.org/a/4UemVZE29SWWrfV9Nt2jSo2n2.svg",
   },
   {
     name: "Conventions Documentation",
