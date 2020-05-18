@@ -9,6 +9,7 @@ import {
   faHandHoldingHeart,
   faUniversity,
   faUser,
+  faCode,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Bodies.css";
 
@@ -106,6 +107,62 @@ export default function ResumeBody() {
                 {" Awards"}
               </Header>
               <Image src="https://react.semantic-ui.com/images/wireframe/paragraph.png" />
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment>
+              <Header size="huge">
+                <FontAwesomeIcon icon={faCode} />
+                {" Technologies"}
+              </Header>
+              <Header size="medium">
+                Some technologies I am familiar with
+              </Header>
+              <Header size="small">Languages & Frameworks</Header>
+              <Image.Group size="mini">
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/java.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/python.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/javascript.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/go.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ruby.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/react.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/node-dot-js.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/html5.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/css3.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/flask.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/electron.svg" />
+              </Image.Group>
+              <Header size="small">Databases</Header>
+              <Image.Group size="mini">
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/mongodb.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/postgresql.svg" />
+              </Image.Group>
+              <Header size="small">CI/CD</Header>
+              <Image.Group size="mini">
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/drone.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jenkins.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/githubactions.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/travisci.svg" />
+              </Image.Group>
+              <Header size="small">Platforms</Header>
+              <Image.Group size="mini">
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/docker.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linux.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/ubuntu.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/raspberrypi.svg" />
+              </Image.Group>
+              <Header size="small">Tools</Header>
+              <Image.Group size="mini">
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/git.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gulp.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/npm.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/apachemaven.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/jetbrains.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/visualstudiocode.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vim.svg" />
+                <Image src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg" />
+              </Image.Group>
             </Segment>
           </Grid.Column>
         </Grid>
