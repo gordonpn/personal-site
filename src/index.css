@@ -37,7 +37,7 @@ a {
       var(--mainColor) 100%
     )
     repeat-x 0 100%;
-  background-size: 4px 4px;
+  background-size: 2px 2px;
   text-decoration: none;
   transition: background-size 0.2s;
 }

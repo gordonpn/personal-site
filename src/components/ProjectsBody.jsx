@@ -1,6 +1,13 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-import { Container, Grid, Header, Image, Segment } from "semantic-ui-react";
+import {
+  Container,
+  Divider,
+  Grid,
+  Header,
+  Image,
+  Segment,
+} from "semantic-ui-react";
 import "./Bodies.css";
 
 const useStyles = createUseStyles({
@@ -22,31 +29,79 @@ const useStyles = createUseStyles({
   },
 });
 
+// todo need more screenshots
+
 const data = [
   {
     name: "Youtube Downloader",
-    description: "Cross-platform YouTube downloader app built with Electron.js",
+    description:
+      "Cross-platform YouTube downloader app built with Electron.js. Downloads in parallel. Format in video or audio in MP3.",
     link: "https://github.com/gordonpn/youtube-downloader-electron",
+    url: "",
     screenshot:
       "https://github.com/gordonpn/youtube-downloader-electron/blob/master/doc/recording.gif?raw=true",
   },
   {
-    name: "Name",
-    description: "",
-    link: "",
-    screenshot: "https://react.semantic-ui.com/images/wireframe/image.png",
+    name: "Hot Red Flag Deals",
+    description:
+      "Software as a service scraping the crowdsourced Hot Deals forums and delivering newsletter emails on trending deals.",
+    link: "https://github.com/gordonpn/hot-flag-deals",
+    url: "",
+    screenshot: "",
   },
   {
-    name: "Name",
-    description: "",
-    link: "",
-    screenshot: "https://react.semantic-ui.com/images/wireframe/image.png",
+    name: "Reddit Slack Bot",
+    description:
+      "I believe Reddit has a lot of good content, but it requires manual sifting through, with this bot I " +
+      "can get notification when a post reaches the 'hot' state directly into my private Slack workspace!",
+    link: "https://github.com/gordonpn/reddit-slack-bot",
+    url: "",
+    screenshot:
+      "https://github.com/gordonpn/reddit-slack-bot/blob/master/docs/screenshot.png?raw=true",
   },
   {
-    name: "Name",
-    description: "",
-    link: "",
-    screenshot: "https://react.semantic-ui.com/images/wireframe/image.png",
+    name: "Moodle Scraper",
+    description:
+      "Automatically scrape and convert files from Concordia Moodle, saves time from manually browsing and downloading! " +
+      "Runs as a Docker container as well.",
+    link: "https://github.com/gordonpn/moodle-scraper",
+    url: "",
+    screenshot: "",
+  },
+  {
+    name: "Internet Speed Tests Visualized",
+    description:
+      "Collects data on home internet speed tests and visualize them on a front end. " +
+      "Note: this project is being refactored and is not up right now",
+    link: "https://github.com/gordonpn/isp-speed-expectation-vs-reality",
+    url: "",
+    screenshot: "",
+  },
+  {
+    name: "JavaScript Boilerplate CLI Tool",
+    description:
+      "JS projects have so much tooling! This is a commandline tool that generates a Node.js or React.js project with some important tools. " +
+      "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
+    link: "https://github.com/gordonpn/create-boilerplate-cli",
+    url: "",
+    screenshot: "https://asciinema.org/a/4UemVZE29SWWrfV9Nt2jSo2n2.svg",
+  },
+  {
+    name: "Conventions Documentation",
+    description:
+      "Some documentation never hurt anybody! I wrote a bit about some project and Git conventions I personally like. " +
+      "I do my best to practice and follow.",
+    link: "https://github.com/gordonpn/git-conventions-guide",
+    url: "",
+    screenshot: "",
+  },
+  {
+    name: "Personal Site",
+    description:
+      "Last, but not least! This site to showcase myself, built with React.js.",
+    link: "https://github.com/gordonpn/personal-site",
+    url: "http://gordon-pn.com/",
+    screenshot: "",
   },
 ];
 
@@ -54,9 +109,51 @@ const loadData = data.map((project) => {
   return (
     <>
       <Grid.Column>
-        <Segment raised>
-          <Header size="huge">{project.name}</Header>
-          <Image src={project.screenshot} />
+        <Header size="huge" attached="top">
+          {project.name}
+        </Header>
+        <Segment raised attached>
+          {project.screenshot ? (
+            <>
+              <Image src={project.screenshot} />
+              <Divider />
+            </>
+          ) : (
+            <></>
+          )}
+          {project.description ? (
+            <>
+              <p>{project.description}</p>
+              <Divider />
+            </>
+          ) : (
+            <></>
+          )}
+          {project.url ? (
+            <>
+              <a href={project.url} target="_blank" rel="noopener noreferrer">
+                {" Website"}
+              </a>
+            </>
+          ) : (
+            <></>
+          )}
+          {project.link ? (
+            <>
+              <p>
+                {"Source code on "}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
+            </>
+          ) : (
+            <></>
+          )}
         </Segment>
       </Grid.Column>
     </>
