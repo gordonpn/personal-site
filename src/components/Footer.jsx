@@ -21,6 +21,9 @@ const useStyles = createUseStyles({
     transform: "translate(-50%, -50%)",
     width: "75%",
   },
+  copyrightContainer: {
+    paddingTop: "2vh",
+  },
 });
 
 export default function Footer() {
@@ -28,12 +31,14 @@ export default function Footer() {
   return (
     <Container fluid className={classes.footer}>
       <SocialIcons />
-      <p className={classes.copyright}>
-        &copy;
-        {` ${new Date().getFullYear()}`}
-        {", "}
-        Gordon Pham-Nguyen
-      </p>
+      <Container fluid className={classes.copyrightContainer}>
+        <p className={classes.copyright}>
+          &copy;
+          {` ${new Date().getFullYear()}`}
+          {", "}
+          Gordon Pham-Nguyen
+        </p>
+      </Container>
     </Container>
   );
 }

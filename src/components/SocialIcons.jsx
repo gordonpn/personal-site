@@ -6,7 +6,7 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
   icons: {
-    padding: "0.1em",
+    padding: "0.15em",
     marginTop: "0.7rem",
   },
 });

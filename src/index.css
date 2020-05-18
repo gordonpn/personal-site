@@ -14,9 +14,9 @@ code {
     monospace;
 }
 
-/*::-webkit-scrollbar {*/
-/*  display: none;*/
-/*}*/
+::-webkit-scrollbar {
+  display: none;
+}
 
 :root {
   --mainColor: #ff9800;
