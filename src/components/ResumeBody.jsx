@@ -64,7 +64,7 @@ const data = [
       ],
       Databases: ["mongodb", "postgresql"],
       "CI/CD": ["drone", "jenkins", "githubactions", "travisci"],
-      Platforms: ["docker", "github", "linux", "ubuntu", "raspberrypi"],
+      Platforms: ["docker", "linux", "ubuntu", "raspberrypi"],
       Tools: [
         "git",
         "gulp",

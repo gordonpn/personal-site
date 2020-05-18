@@ -5,11 +5,13 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const useStyles = createUseStyles({
   arrow: {
-    position: "absolute",
-    bottom: 0,
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    marginRight: "-50%",
+    display: "block",
+    top: "100%",
+    width: "40%",
+    marginRight: "auto",
+    marginLeft: "auto",
+    marginTop: "auto",
+    height: "170%",
     animationName: "$bounceAnimation",
     animationDuration: "4s",
     animationIterationCount: "infinite",

@@ -115,7 +115,13 @@ const loadData = data.map((project) => {
         <Segment raised attached>
           {project.screenshot ? (
             <>
-              <Image src={project.screenshot} />
+              <a
+                href={project.url ? project.url : project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={project.screenshot} />
+              </a>
               <Divider />
             </>
           ) : (
