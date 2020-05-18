@@ -1,7 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 import Container from "react-bootstrap/Container";
-import "./Footer.css";
 import SocialIcons from "./SocialIcons";
 
 const useStyles = createUseStyles({

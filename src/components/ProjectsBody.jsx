@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { createUseStyles } from "react-jss";
-import { Header, Image } from "semantic-ui-react";
+import { Grid, Header, Image, Segment } from "semantic-ui-react";
 import "./Bodies.css";
 
 const useStyles = createUseStyles({
@@ -25,15 +25,33 @@ const useStyles = createUseStyles({
 
 export default function ProjectsBody() {
   const classes = useStyles();
+
   return (
     <Container fluid className={classes.outerContainer}>
       <Container fluid className={classes.innerContainer}>
         <Header size="huge" textAlign="center">
           Projects
         </Header>
-        <Image src="https://react.semantic-ui.com/images/wireframe/text-image.png" />
-        <Image src="https://react.semantic-ui.com/images/wireframe/text-image.png" />
-        <Image src="https://react.semantic-ui.com/images/wireframe/text-image.png" />
+        <Grid stackable columns={3}>
+          <Grid.Column>
+            <Segment>
+              <Header size="huge">Name</Header>
+              <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph-alt.png" />
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment>
+              <Header size="huge">Name</Header>
+              <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph-alt.png" />
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment>
+              <Header size="huge">Name</Header>
+              <Image src="https://react.semantic-ui.com/images/wireframe/media-paragraph-alt.png" />
+            </Segment>
+          </Grid.Column>
+        </Grid>
       </Container>
     </Container>
   );
