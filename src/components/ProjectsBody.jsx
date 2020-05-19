@@ -34,7 +34,7 @@ const data = [
   {
     name: "Youtube Downloader",
     description:
-      "Cross-platform YouTube downloader app. Downloads in parallel. Format in video or audio in MP3.",
+      "Cross-platform YouTube downloader app, that downloads concurrently. Format in video or audio in MP3.",
     link: "https://github.com/gordonpn/youtube-downloader-electron",
     url: "",
     screenshot:
@@ -94,11 +94,11 @@ const data = [
     name: "Music Video Generator",
     description:
       "Automagically generate a music video based a user input (song title and artist). " +
-      "Leveraging OctaveGroup's TouchTunes API for song information and ShutterStock's API for visual content. " +
-      "Natural Language Processing (NLP) was used on the lyrics to process meaning and fetch relevant media. " +
+      "We leveraged OctaveGroup's TouchTunes API for song information and ShutterStock's API for visual content. " +
+      "Then, Natural Language Processing (NLP) was used on the lyrics to process meaning and fetch relevant media. " +
       "Team effort of four.",
-    link: "https://devpost.com/software/picture-video-music-generator",
-    url: "",
+    link: "https://github.com/tiffzeng/conu-hacks-2020",
+    url: "https://devpost.com/software/picture-video-music-generator",
     screenshot:
       "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/920/419/datas/original.png",
     tags: ["JavaScript", "Node.js", "React.js"],

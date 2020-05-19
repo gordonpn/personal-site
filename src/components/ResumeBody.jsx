@@ -170,7 +170,7 @@ const data = [
         title: "Top Five Finalist",
         date: "2020-01-26",
         description:
-          "Our team made it to be one of the two five projects of the ConUHacks 2020 hackathon",
+          "Our team made it to be one of the top five projects of the ConUHacks 2020 hackathon",
       },
     ],
   },
