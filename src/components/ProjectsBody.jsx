@@ -30,8 +30,6 @@ const useStyles = createUseStyles({
   },
 });
 
-// todo need more screenshots
-
 const data = [
   {
     name: "Youtube Downloader",
@@ -71,7 +69,7 @@ const data = [
     link: "https://github.com/gordonpn/hot-flag-deals",
     url: "",
     screenshot: "",
-    tags: ["Go", "PostgreSQL", "Docker"],
+    tags: ["Go", "PostgreSQL", "Docker", "mjml"],
   },
   {
     name: "Moodle Scraper",
@@ -91,6 +89,19 @@ const data = [
     url: "",
     screenshot: "",
     tags: ["JavaScript", "Python", "Node.js", "React.js", "Docker", "MongoDB"],
+  },
+  {
+    name: "Music Video Generator",
+    description:
+      "Automagically generate a music video based a user input (song title and artist). " +
+      "Leveraging OctaveGroup's TouchTunes API for song information and ShutterStock's API for visual content. " +
+      "Natural Language Processing (NLP) was used on the lyrics to process meaning and fetch relevant media. " +
+      "Team effort of four.",
+    link: "https://devpost.com/software/picture-video-music-generator",
+    url: "",
+    screenshot:
+      "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/920/419/datas/original.png",
+    tags: ["JavaScript", "Node.js", "React.js"],
   },
   {
     name: "Conventions Documentation",
@@ -191,7 +202,7 @@ export default function ProjectsBody() {
         <Header size="huge" textAlign="center">
           Projects
         </Header>
-        <Grid stackable columns={3}>
+        <Grid stackable doubling columns={3} className="masonry three">
           {loadData}
         </Grid>
       </Container>

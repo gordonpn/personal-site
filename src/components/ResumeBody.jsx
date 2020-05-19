@@ -1,6 +1,14 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-import { Container, Grid, Header, Image, Segment } from "semantic-ui-react";
+import {
+  Container,
+  Grid,
+  Header,
+  Image,
+  Label,
+  List,
+  Segment,
+} from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAward,
@@ -41,10 +49,35 @@ const data = [
       "Currently looking for internship opportunities for Summer 2020, Summer 2021 and Fall 2021.",
     ],
   },
-  { header: "Work Experience", icon: faBuilding },
-  { header: "Volunteering", icon: faHandHoldingHeart },
-  { header: "Education", icon: faUniversity },
-  { header: "Award", icon: faAward },
+
+  {
+    header: "Volunteering",
+    icon: faHandHoldingHeart,
+    content: [
+      {
+        organization: "Canadian University Software Engineering Conference",
+        title: "Developer and Designer",
+        date: "2020-05-01",
+        description:
+          "In a team of two, in charge of the overall design of the conference, the landing page, as well as the web apps for CUSEC 2021.",
+      },
+      {
+        organization: "Code In The Dark Event by Osedea",
+        title: "Volunteer",
+        date: "2019-11-01",
+        description:
+          "Help out before and during the event with various tasks. " +
+          "Code In The Dark is a frontend development competition, without preview.",
+      },
+      {
+        organization: "Concordia Rock Climbers Association",
+        title: "Founder and President",
+        date: "2016-04-01 – 2018-04-01",
+        description:
+          "We organized indoor and outdoor trips to initiate students to rock climbing and bouldering.",
+      },
+    ],
+  },
   {
     header: "Technologies",
     icon: faCode,
@@ -77,9 +110,83 @@ const data = [
       ],
     },
   },
+  {
+    header: "Work Experience",
+    icon: faBuilding,
+    content: [
+      {
+        company: "Intact Financial Corporation",
+        title: "Software Developer Intern",
+        date: "2019-05-21 - 2019-12-31",
+        location: "Montreal, Canada",
+        description: [
+          "Contributed to a Software Composition Analysis application to generate reports for executives and developers.",
+          "Integrated Jira Cloud into the Information Security department workflow for managing pen testing vulnerabilities, " +
+            "which were previously managed on Excel sheets, improving efficiency.",
+          "Improved aggregated report design, improving readability for executives.",
+          "Wrote unit and integration tests for application components developed.",
+          "Major refactoring of codebase to improve maintainability and reusability of components of the software.",
+          "Developed various internal automation features and tools.",
+        ],
+        tags: [
+          "Java",
+          "Maven",
+          "Jenkins",
+          "JUnit",
+          "Thymeleaf",
+          "Eclipse BIRT",
+        ],
+      },
+      {
+        company: "Dental Office St-Charles",
+        title: "System Administrator",
+        date: "2014-04-01 - 2016-11-01",
+        location: "Longueuil, Canada",
+        description: [
+          "Verifying the integrity and availability of all hardware, server resources, systems and key processes, reviewing system and application logs.",
+          "Verifying completion of scheduled jobs such as backups.",
+          "Perform regular system monitoring, configure and add new services as necessary.",
+        ],
+        tags: ["Windows"],
+      },
+    ],
+  },
+  {
+    header: "Education",
+    icon: faUniversity,
+    content: [
+      {
+        degree: "Bachelor's of Software Engineering",
+        institution: "Concordia University, Montreal, Canada",
+        date: "2018-2022",
+        description: "Co-op Program, 3.15 GPA",
+      },
+    ],
+  },
+  {
+    header: "Award",
+    icon: faAward,
+    content: [
+      {
+        title: "Top Five Finalist",
+        date: "2020-01-26",
+        description:
+          "Our team made it to be one of the two five projects of the ConUHacks 2020 hackathon",
+      },
+    ],
+  },
 ];
 
-const loadIntro = data[0].content.map((value, index) => {
+const SECTIONS = {
+  INTRODUCTION: 0,
+  VOLUNTEERING: 1,
+  TECHNOLOGIES: 2,
+  WORK_EXPERIENCE: 3,
+  EDUCATION: 4,
+  AWARDS: 5,
+};
+
+const loadIntro = data[SECTIONS.INTRODUCTION].content.map((value, index) => {
   return (
     <div>
       {index === 0 ? (
@@ -96,22 +203,95 @@ const loadIntro = data[0].content.map((value, index) => {
   );
 });
 
-const loadTech = Object.keys(data[5].content).map((category) => {
+const loadWork = data[SECTIONS.WORK_EXPERIENCE].content.map((item) => {
   return (
     <>
-      <Header size="small">{category}</Header>
-      <Image.Group size="mini">
-        {data[5].content[category].map((item) => {
+      <Header size="small">
+        {item.title}
+        <span style={{ float: "right" }}>{item.company}</span>
+      </Header>
+      <p>
+        {item.location}
+        <span style={{ float: "right" }}>{item.date}</span>
+      </p>
+      <List bulleted>
+        {item.description.map((line) => {
           return (
-            <Image
-              src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${item}.svg`}
-            />
+            <>
+              <List.Item>{line}</List.Item>
+            </>
           );
         })}
-      </Image.Group>
+      </List>
+      <Label.Group size="mini">
+        {item.tags.map((tag) => {
+          return (
+            <>
+              <Label>{tag}</Label>
+            </>
+          );
+        })}
+      </Label.Group>
     </>
   );
 });
+
+const loadVolunteering = data[SECTIONS.VOLUNTEERING].content.map((item) => {
+  return (
+    <>
+      <Header size="small">{item.organization}</Header>
+      <p>
+        {item.title}
+        <span style={{ float: "right" }}>{item.date}</span>
+      </p>
+      <p>{item.description}</p>
+    </>
+  );
+});
+
+const loadEducation = data[SECTIONS.EDUCATION].content.map((item) => {
+  return (
+    <>
+      <Header size="small">{item.degree}</Header>
+      <p>
+        {item.institution}
+        <span style={{ float: "right" }}>{item.date}</span>
+      </p>
+      <p>{item.description}</p>
+    </>
+  );
+});
+
+const loadAwards = data[SECTIONS.AWARDS].content.map((item) => {
+  return (
+    <>
+      <Header size="small">
+        {item.title}
+        <span style={{ float: "right" }}>{item.date}</span>
+      </Header>
+      <p>{item.description}</p>
+    </>
+  );
+});
+
+const loadTech = Object.keys(data[SECTIONS.TECHNOLOGIES].content).map(
+  (category) => {
+    return (
+      <>
+        <Header size="small">{category}</Header>
+        <Image.Group size="mini">
+          {data[SECTIONS.TECHNOLOGIES].content[category].map((item) => {
+            return (
+              <Image
+                src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${item}.svg`}
+              />
+            );
+          })}
+        </Image.Group>
+      </>
+    );
+  }
+);
 
 const loadData = data.map((item) => {
   return (
@@ -127,13 +307,13 @@ const loadData = data.map((item) => {
               case "Introduction":
                 return <>{loadIntro}</>;
               case "Work Experience":
-                return <></>;
+                return <>{loadWork}</>;
               case "Volunteering":
-                return <></>;
+                return <>{loadVolunteering}</>;
               case "Education":
-                return <></>;
+                return <>{loadEducation}</>;
               case "Award":
-                return <></>;
+                return <>{loadAwards}</>;
               case "Technologies":
                 return (
                   <>
@@ -162,7 +342,7 @@ export default function ResumeBody() {
         <Header size="huge" textAlign="center">
           About Myself
         </Header>
-        <Grid stackable columns={2}>
+        <Grid stackable doubling columns="2" className="masonry two">
           {loadData}
         </Grid>
       </Container>
