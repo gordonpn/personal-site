@@ -6,6 +6,7 @@ name: deploy
 steps:
   - name: slack before
     image: plugins/slack
+    failure: ignore
     settings:
       channel: drone-ci
       template: >
@@ -31,6 +32,7 @@ steps:
       - docker-compose -f /drone/src/docker-compose.yml up --detach --build
   - name: slack after
     image: plugins/slack
+    failure: ignore
     settings:
       channel: drone-ci
       template: >

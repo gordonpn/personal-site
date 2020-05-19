@@ -119,7 +119,7 @@ const data = [
     link: "https://github.com/gordonpn/personal-site",
     url: "http://gordon-pn.com/",
     screenshot: "",
-    tags: ["JavaScript", "React.js"],
+    tags: ["JavaScript", "React.js", "Docker"],
   },
 ];
 

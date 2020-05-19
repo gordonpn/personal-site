@@ -49,7 +49,47 @@ const data = [
       "Currently looking for internship opportunities for Summer 2020, Summer 2021 and Fall 2021.",
     ],
   },
-
+  {
+    header: "Work Experience",
+    icon: faBuilding,
+    content: [
+      {
+        company: "Intact Financial Corporation",
+        title: "Software Developer Intern",
+        date: "2019-05-21 - 2019-12-31",
+        location: "Montreal, Canada",
+        description: [
+          "Contributed to a Software Composition Analysis application to generate reports for executives and developers.",
+          "Integrated Jira Cloud into the Information Security department workflow for managing pen testing vulnerabilities, " +
+            "which were previously managed on Excel sheets, improving efficiency.",
+          "Improved aggregated report design, improving readability for executives.",
+          "Wrote unit and integration tests for application components developed.",
+          "Major refactoring of codebase to improve maintainability and reusability of components of the software.",
+          "Developed various internal automation features and tools.",
+        ],
+        tags: [
+          "Java",
+          "Maven",
+          "Jenkins",
+          "JUnit",
+          "Thymeleaf",
+          "Eclipse BIRT",
+        ],
+      },
+      {
+        company: "Dental Office St-Charles",
+        title: "System Administrator",
+        date: "2014-04-01 - 2016-11-01",
+        location: "Longueuil, Canada",
+        description: [
+          "Verifying the integrity and availability of all hardware, server resources, systems and key processes, reviewing system and application logs.",
+          "Verifying completion of scheduled jobs such as backups.",
+          "Perform regular system monitoring, configure and add new services as necessary.",
+        ],
+        tags: ["Windows"],
+      },
+    ],
+  },
   {
     header: "Volunteering",
     icon: faHandHoldingHeart,
@@ -111,47 +151,6 @@ const data = [
     },
   },
   {
-    header: "Work Experience",
-    icon: faBuilding,
-    content: [
-      {
-        company: "Intact Financial Corporation",
-        title: "Software Developer Intern",
-        date: "2019-05-21 - 2019-12-31",
-        location: "Montreal, Canada",
-        description: [
-          "Contributed to a Software Composition Analysis application to generate reports for executives and developers.",
-          "Integrated Jira Cloud into the Information Security department workflow for managing pen testing vulnerabilities, " +
-            "which were previously managed on Excel sheets, improving efficiency.",
-          "Improved aggregated report design, improving readability for executives.",
-          "Wrote unit and integration tests for application components developed.",
-          "Major refactoring of codebase to improve maintainability and reusability of components of the software.",
-          "Developed various internal automation features and tools.",
-        ],
-        tags: [
-          "Java",
-          "Maven",
-          "Jenkins",
-          "JUnit",
-          "Thymeleaf",
-          "Eclipse BIRT",
-        ],
-      },
-      {
-        company: "Dental Office St-Charles",
-        title: "System Administrator",
-        date: "2014-04-01 - 2016-11-01",
-        location: "Longueuil, Canada",
-        description: [
-          "Verifying the integrity and availability of all hardware, server resources, systems and key processes, reviewing system and application logs.",
-          "Verifying completion of scheduled jobs such as backups.",
-          "Perform regular system monitoring, configure and add new services as necessary.",
-        ],
-        tags: ["Windows"],
-      },
-    ],
-  },
-  {
     header: "Education",
     icon: faUniversity,
     content: [
@@ -179,9 +178,9 @@ const data = [
 
 const SECTIONS = {
   INTRODUCTION: 0,
-  VOLUNTEERING: 1,
-  TECHNOLOGIES: 2,
-  WORK_EXPERIENCE: 3,
+  WORK_EXPERIENCE: 1,
+  VOLUNTEERING: 2,
+  TECHNOLOGIES: 3,
   EDUCATION: 4,
   AWARDS: 5,
 };

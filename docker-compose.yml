@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 services:
   personal-site:
     container_name: personal-site
@@ -15,8 +15,8 @@ services:
     networks:
       - web
     labels:
-      - "traefik.docker.network=web"
       - "traefik.enable=true"
+
 networks:
   web:
     external: true
