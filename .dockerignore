@@ -1,4 +1,13 @@
-.gitignore
-LICENSE
+.depcheckrc
 .dockerignore
+.drone.yml
+.eslintrc.js
+.gitignore
+.prettierignore
+.stylelintrc
+.vscode
+LICENSE
+README.md
 docker-compose.yml
+jsconfig.json
+node_modules
