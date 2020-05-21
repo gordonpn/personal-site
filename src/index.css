@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,10 +25,30 @@ code {
   --mainColor: #ff9800;
 }
 
+.ui.grid {
+  margin-bottom: 0;
+}
+
+.ui.header {
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+.ui.segment {
+  font-size: 1.04rem;
+}
+
 @media only screen and (max-width: 767px) {
   .ui.container {
     margin-right: 0 !important;
     margin-left: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui.container {
+    width: 70vw;
   }
 }
 

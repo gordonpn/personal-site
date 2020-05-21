@@ -9,7 +9,6 @@ import {
   Label,
   Segment,
 } from "semantic-ui-react";
-import "./Bodies.css";
 
 const useStyles = createUseStyles({
   outerContainer: {
@@ -19,14 +18,10 @@ const useStyles = createUseStyles({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     margin: 0,
-    overflow: "auto",
     width: "100vw",
   },
   innerContainer: {
-    marginBottom: "0px",
     overflow: "auto",
-    paddingTop: "50px",
-    width: "97%",
   },
 });
 
@@ -198,7 +193,7 @@ export default function ProjectsBody() {
 
   return (
     <Container fluid className={classes.outerContainer}>
-      <Container fluid className={classes.innerContainer}>
+      <Container className={classes.innerContainer}>
         <Header size="huge" textAlign="center">
           Projects
         </Header>
