@@ -28,9 +28,7 @@ const useStyles = createUseStyles({
     backgroundSize: "cover",
     margin: 0,
     width: "100vw",
-  },
-  innerContainer: {
-    overflow: "auto",
+    height: "calc(10vh + max-content)",
   },
 });
 
@@ -332,7 +330,7 @@ export default function ResumeBody() {
 
   return (
     <Container fluid className={classes.outerContainer}>
-      <Container className={classes.innerContainer}>
+      <Container>
         <Header size="huge" textAlign="center">
           About Myself
         </Header>
