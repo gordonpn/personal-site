@@ -124,10 +124,10 @@ const loadData = data.map((project) => {
           {project.name}
         </Header>
         <Segment raised attached>
-          {project.screenshot ? (
+          {project.screenshot && (
             <>
               <a
-                href={project.url ? project.url : project.link}
+                href={project.url || project.link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -135,10 +135,8 @@ const loadData = data.map((project) => {
               </a>
               <Divider />
             </>
-          ) : (
-            <></>
           )}
-          {project.description ? (
+          {project.description && (
             <>
               <p>{project.description}</p>
               <Label.Group size="mini">
@@ -152,19 +150,15 @@ const loadData = data.map((project) => {
               </Label.Group>
               <Divider />
             </>
-          ) : (
-            <></>
           )}
-          {project.url ? (
+          {project.url && (
             <>
               <a href={project.url} target="_blank" rel="noopener noreferrer">
                 {" Website"}
               </a>
             </>
-          ) : (
-            <></>
           )}
-          {project.link ? (
+          {project.link && (
             <>
               <p>
                 {"Source code on "}
@@ -177,8 +171,6 @@ const loadData = data.map((project) => {
                 </a>
               </p>
             </>
-          ) : (
-            <></>
           )}
         </Segment>
       </Grid.Column>

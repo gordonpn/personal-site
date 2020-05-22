@@ -181,16 +181,8 @@ const SECTIONS = {
 const loadIntro = data[SECTIONS.INTRODUCTION].content.map((value, index) => {
   return (
     <div>
-      {index === 0 ? (
-        <>
-          <p>{value}</p>
-        </>
-      ) : (
-        <>
-          <br />
-          <p>{value}</p>
-        </>
-      )}
+      {index > 0 && <br />}
+      <p>{value}</p>
     </div>
   );
 });
@@ -316,7 +308,7 @@ const loadData = data.map((item) => {
                   </>
                 );
               default:
-                return <></>;
+                return null;
             }
           })()}
         </Segment>
