@@ -78,7 +78,7 @@ const data = [
     description:
       "Collects data on home internet speed tests and visualize them on a front end. " +
       "Note: this project is being refactored and is not up right now",
-    link: "https://github.com/gordonpn/isp-speed-expectation-vs-reality",
+    link: "https://github.com/gordonpn/internet-speedtests-visualized",
     url: "",
     screenshot: "",
     tags: ["JavaScript", "Python", "Node.js", "React.js", "Docker", "MongoDB"],
