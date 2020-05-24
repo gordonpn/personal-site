@@ -125,7 +125,6 @@ const data = [
         "node-dot-js",
         "html5",
         "css3",
-        "flask",
         "electron",
       ],
       Databases: ["mongodb", "postgresql"],

@@ -48,7 +48,7 @@ const data = [
   {
     name: "JavaScript Boilerplate CLI Tool",
     description:
-      "JS projects have so much tooling! This is a commandline tool that generates a Node.js or React.js project with some important tools. " +
+      "JavaScript projects have so much tooling! This is a commandline tool that generates a Node.js or React.js project with some important tools. " +
       "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
     link: "https://github.com/gordonpn/create-boilerplate-cli",
     url: "",
@@ -76,12 +76,19 @@ const data = [
   {
     name: "Internet Speed Tests Visualized",
     description:
-      "Collects data on home internet speed tests and visualize them on a front end. " +
-      "Note: this project is being refactored and is not up right now",
+      "Collects data on home internet speed tests and visualize them on a frontend. ",
     link: "https://github.com/gordonpn/internet-speedtests-visualized",
     url: "",
     screenshot: "",
-    tags: ["JavaScript", "Python", "Node.js", "React.js", "Docker", "MongoDB"],
+    tags: [
+      "JavaScript",
+      "Python",
+      "Node.js",
+      "React.js",
+      "Docker",
+      "MongoDB",
+      "Redis",
+    ],
   },
   {
     name: "Music Video Generator",
