@@ -70,7 +70,7 @@ const data = [
       "Automatically scrape and convert files from Concordia Moodle, saves time from manually browsing and downloading!",
     link: "https://github.com/gordonpn/moodle-scraper",
     url: "",
-    screenshot: "",
+    screenshot: "https://asciinema.org/a/frSwrV8ak9aOnSPEAXISTHejL.svg",
     tags: ["Python", "Docker"],
   },
   {
@@ -78,8 +78,9 @@ const data = [
     description:
       "Collects data on home internet speed tests and visualize them on a frontend. ",
     link: "https://github.com/gordonpn/internet-speedtests-visualized",
-    url: "",
-    screenshot: "",
+    url: "https://speed.gordon-pn.com",
+    screenshot:
+      "https://github.com/gordonpn/internet-speedtests-visualized/blob/master/docs/screenshot.png?raw=true",
     tags: [
       "JavaScript",
       "Python",
@@ -115,7 +116,7 @@ const data = [
   },
   {
     name: "Personal Site",
-    description: "Last, but not least! This site to showcase myself.",
+    description: "This React.js site to to show my profile.",
     link: "https://github.com/gordonpn/personal-site",
     url: "http://gordon-pn.com/",
     screenshot:

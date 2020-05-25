@@ -60,6 +60,40 @@ volumes:
 ---
 kind: pipeline
 type: docker
+name: security
+
+trigger:
+  event: [ push ]
+
+steps:
+  - name: snyk scan
+    image: node:14-buster-slim
+    environment:
+      SNYK_TOKEN:
+        from_secret: SNYK_TOKEN
+    commands:
+      - npm install -g snyk
+      - snyk test --severity-threshold=high
+  - name: slack after security
+    image: plugins/slack
+    failure: ignore
+    settings:
+      channel: drone-ci
+      template: >
+        {{repo.name}}:
+        {{#success build.status}}
+        security scan #{{build.number}} succeeded!
+        {{else}}
+        security scan #{{build.number}} failed!
+        {{/success}}
+      webhook:
+        from_secret: SLACK_WEBHOOK_URL
+    when:
+      status: [ success, failure ]
+
+---
+kind: pipeline
+type: docker
 name: deploy
 
 trigger:
