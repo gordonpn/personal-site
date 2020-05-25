@@ -25,7 +25,7 @@ const useStyles = createUseStyles({
 
 const data = [
   {
-    name: "Youtube Downloader",
+    name: "YouTube Downloader",
     description:
       "Cross-platform YouTube downloader app, that downloads concurrently. Format in video or audio in MP3.",
     link: "https://github.com/gordonpn/youtube-downloader-electron",
@@ -48,7 +48,7 @@ const data = [
   {
     name: "JavaScript Boilerplate CLI Tool",
     description:
-      "JavaScript projects have so much tooling! This is a commandline tool that generates a Node.js or React.js project with some important tools. " +
+      "JavaScript projects have so much tooling! This is a command line tool that generates a Node.js or React.js project with some important tools. " +
       "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
     link: "https://github.com/gordonpn/create-boilerplate-cli",
     url: "",
@@ -118,7 +118,8 @@ const data = [
     description: "Last, but not least! This site to showcase myself.",
     link: "https://github.com/gordonpn/personal-site",
     url: "http://gordon-pn.com/",
-    screenshot: "",
+    screenshot:
+      "https://github.com/gordonpn/personal-site/blob/master/docs/screenshot.png?raw=true",
     tags: ["JavaScript", "React.js", "Docker"],
   },
 ];
