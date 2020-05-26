@@ -12,6 +12,10 @@ services:
     restart: always
     healthcheck:
       test: curl --fail -s http://localhost:80/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
     networks:
       - web
     labels:

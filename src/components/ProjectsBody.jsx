@@ -109,10 +109,11 @@ const data = [
     description:
       "Some documentation never hurt anybody! I wrote a bit about some project and Git conventions I personally like. " +
       "I do my best to practice and follow.",
-    link: "https://github.com/gordonpn/git-conventions-guide",
-    url: "",
-    screenshot: "",
-    tags: ["Markdown"],
+    link: "https://github.com/gordonpn/conventions-guide",
+    url: "https://conventions.gordon-pn.com/",
+    screenshot:
+      "https://github.com/gordonpn/conventions-guide/blob/master/docs/screenshot.png?raw=true",
+    tags: ["Gatsby.js", "Docker", "NGINX"],
   },
   {
     name: "Personal Site",
