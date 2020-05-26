@@ -52,7 +52,8 @@ const data = [
       "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
     link: "https://github.com/gordonpn/create-boilerplate-cli",
     url: "",
-    screenshot: "https://asciinema.org/a/4UemVZE29SWWrfV9Nt2jSo2n2.svg",
+    screenshot:
+      "https://github.com/gordonpn/create-boilerplate-cli/blob/master/docs/screenshot.png?raw=true",
     tags: ["Ruby"],
   },
   {
@@ -70,7 +71,8 @@ const data = [
       "Automatically scrape and convert files from Concordia Moodle, saves time from manually browsing and downloading!",
     link: "https://github.com/gordonpn/moodle-scraper",
     url: "",
-    screenshot: "https://asciinema.org/a/frSwrV8ak9aOnSPEAXISTHejL.svg",
+    screenshot:
+      "https://github.com/gordonpn/moodle-scraper/blob/master/docs/screenshot.png?raw=true",
     tags: ["Python", "Docker"],
   },
   {
