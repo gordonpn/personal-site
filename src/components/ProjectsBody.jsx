@@ -9,6 +9,7 @@ import {
   Label,
   Segment,
 } from "semantic-ui-react";
+import LazyLoad from "react-lazyload";
 
 const useStyles = createUseStyles({
   outerContainer: {
@@ -143,7 +144,9 @@ const loadData = data.map((project) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src={project.screenshot} />
+                <LazyLoad once>
+                  <Image src={project.screenshot} />
+                </LazyLoad>
               </a>
               <Divider />
             </>
