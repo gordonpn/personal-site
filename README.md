@@ -1,6 +1,7 @@
 # Personal site
 
 [![Build Status](https://drone.gordon-pn.com/api/badges/gordonpn/personal-site/status.svg)](https://drone.gordon-pn.com/gordonpn/personal-site)
+[![Uptime Robot](https://badgen.net/uptime-robot/status/m785024735-3db42889940bfb1bb60183aa)](https://gordon-pn.com)
 ![License](https://badgen.net/github/license/gordonpn/personal-site)
 
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/gordonpn)
@@ -23,3 +24,7 @@ Live at https://gordon-pn.com
 ## Screenshot
 
 ![Screenshots](./docs/screenshot.png)
+
+## license
+
+[MIT License](./LICENSE)

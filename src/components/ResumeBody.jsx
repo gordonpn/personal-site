@@ -127,7 +127,7 @@ const data = [
         "node-dot-js",
         "react",
       ],
-      Databases: ["mongodb", "postgresql"],
+      Databases: ["mongodb", "postgresql", "redis"],
       "CI/CD": ["drone", "jenkins", "githubactions", "travisci"],
       Platforms: ["docker", "linux", "ubuntu", "raspberrypi"],
       Tools: [
