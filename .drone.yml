@@ -23,32 +23,7 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: build docker images
-
-trigger:
-  event: [ push, pull_request ]
-  branch:
-    exclude:
-      - master
-
-steps:
-  - name: build images
-    image: docker/compose:1.25.5
-    volumes:
-      - name: dockersock
-        path: /var/run/docker.sock
-    commands:
-      - docker-compose -f /drone/src/docker-compose.yml build
-
-volumes:
-  - name: dockersock
-    host:
-      path: /var/run/docker.sock
-
----
-kind: pipeline
-type: docker
-name: publish docker image
+name: build and publish docker image
 
 trigger:
   event: [ push, pull_request ]
@@ -74,6 +49,7 @@ volumes:
   - name: dockersock
     host:
       path: /var/run/docker.sock
+
 ---
 kind: pipeline
 type: docker
@@ -104,7 +80,7 @@ steps:
       - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile
 
 depends_on:
-  - publish docker image
+  - build and publish docker image
 
 volumes:
   - name: dockersock
@@ -134,7 +110,7 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
-      - docker-compose -f /drone/src/docker-compose.yml up --detach --build
+      - /bin/sh /drone/src/.docker/deploy.sh
 
 volumes:
   - name: dockersock
@@ -168,7 +144,6 @@ steps:
       status: [ success, failure ]
 
 depends_on:
-  - build docker images
-  - publish docker image
+  - build and publish docker image
   - security
   - deploy

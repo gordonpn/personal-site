@@ -2,11 +2,9 @@ version: '3.8'
 services:
   personal-site:
     container_name: personal-site
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: gordonpn/personal-site:latest
     environment:
-      - TZ
+      - TZ=America/Montreal
     expose:
       - "80"
     restart: always
@@ -17,10 +15,30 @@ services:
       retries: 3
       start_period: 10s
     networks:
-      - web
+      - traefik-public
     labels:
       - "traefik.enable=true"
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+        delay: 10s
+      rollback_config:
+        parallelism: 0
+        order: stop-first
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      labels:
+        - "traefik.enable=true"
+        - "traefik.constraint-label=traefik-public"
+        - "traefik.http.services.personal-site.loadbalancer.server.port=80"
 
 networks:
-  web:
+  traefik-public:
     external: true
+    driver: overlay
