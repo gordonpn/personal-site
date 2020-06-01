@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  personal-site:
+  frontend:
     container_name: personal-site
     image: gordonpn/personal-site:latest
     environment:

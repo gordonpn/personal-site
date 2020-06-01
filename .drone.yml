@@ -100,11 +100,7 @@ trigger:
 steps:
   - name: deploy prod
     image: docker/compose:1.25.5
-    when:
-      branch:
-        - master
     environment:
-      COMPOSE_PROJECT_NAME: personal-site
       TZ: America/Montreal
     volumes:
       - name: dockersock
