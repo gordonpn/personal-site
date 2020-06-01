@@ -74,9 +74,6 @@ steps:
       - snyk test --severity-threshold=high
       - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile
 
-depends_on:
-  - build and publish docker image
-
 volumes:
   - name: dockersock
     host:
