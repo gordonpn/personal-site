@@ -63,7 +63,7 @@ trigger:
 
 steps:
   - name: snyk scan
-    image: node:14-buster-slim
+    image: gordonpn/snyk-cli-drone
     environment:
       SNYK_TOKEN:
         from_secret: SNYK_TOKEN
@@ -71,11 +71,6 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
-      - apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-      - curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-      - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-      - apt-get update && apt-get install -y docker-ce
-      - npm install -g snyk
       - snyk test --severity-threshold=high
       - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile
 

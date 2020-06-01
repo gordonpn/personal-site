@@ -25,6 +25,6 @@ Live at https://gordon-pn.com
 
 ![Screenshots](./docs/screenshot.png)
 
-## license
+## License
 
 [MIT License](./LICENSE)
