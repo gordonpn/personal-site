@@ -25,6 +25,10 @@ kind: pipeline
 type: docker
 name: build and publish docker image
 
+platform:
+  os: linux
+  arch: amd64
+
 trigger:
   event: [ push, pull_request ]
   branch:
@@ -33,7 +37,7 @@ trigger:
 
 steps:
   - name: publish
-    image: docker
+    image: gordonpn/docker-buildx-drone
     environment:
       DOCKER_TOKEN:
         from_secret: DOCKER_TOKEN
@@ -42,8 +46,11 @@ steps:
         path: /var/run/docker.sock
     commands:
       - echo $DOCKER_TOKEN | docker login -u gordonpn --password-stdin
-      - docker build -t gordonpn/personal-site:latest .
-      - docker push gordonpn/personal-site:latest
+      - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+      - docker buildx rm builder || true
+      - docker buildx create --name builder --driver docker-container --use
+      - docker buildx inspect --bootstrap
+      - docker buildx build -t gordonpn/personal-site:latest --platform linux/amd64,linux/arm64 --push .
 
 volumes:
   - name: dockersock

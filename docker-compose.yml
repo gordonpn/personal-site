@@ -22,7 +22,7 @@ services:
     labels:
       - "traefik.enable=true"
     deploy:
-      replicas: 2
+      replicas: 3
       update_config:
         parallelism: 1
         order: start-first
