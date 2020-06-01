@@ -89,7 +89,7 @@ const data = [
       "Python",
       "Node.js",
       "React.js",
-      "Docker",
+      "Docker Swarm",
       "MongoDB",
       "Redis",
     ],
@@ -116,7 +116,7 @@ const data = [
     url: "https://conventions.gordon-pn.com/",
     screenshot:
       "https://github.com/gordonpn/conventions-guide/blob/master/docs/screenshot.png?raw=true",
-    tags: ["Gatsby.js", "Docker", "NGINX"],
+    tags: ["Gatsby.js", "Docker Swarm", "NGINX"],
   },
   {
     name: "Personal Site",
@@ -125,7 +125,7 @@ const data = [
     url: "http://gordon-pn.com/",
     screenshot:
       "https://github.com/gordonpn/personal-site/blob/master/docs/screenshot.png?raw=true",
-    tags: ["JavaScript", "React.js", "Docker"],
+    tags: ["JavaScript", "React.js", "Docker Swarm"],
   },
 ];
 

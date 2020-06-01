@@ -3,6 +3,9 @@ services:
   frontend:
     container_name: personal-site
     image: gordonpn/personal-site:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - TZ=America/Montreal
     expose:
@@ -19,7 +22,7 @@ services:
     labels:
       - "traefik.enable=true"
     deploy:
-      replicas: 3
+      replicas: 2
       update_config:
         parallelism: 1
         order: start-first

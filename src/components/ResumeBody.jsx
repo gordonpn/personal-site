@@ -39,7 +39,7 @@ const data = [
     content: [
       "I describe myself as a resourceful, detail-oriented self-starter with a great open-mind, a team player with a positive attitude. I love to collaborate, share ideas and knowledge. I am enthusiastic about automation and optimization. I am always looking forward to learning new skills and improve existing ones. I live for challenging problems. I feel the most satisfaction when I have the opportunity to learn and develop. I feel self-fulfillment when meeting the organization’s goals and customer expectations.",
       "When I am not working on software, I enjoy climbing hills on my road bike and rock climbing (bouldering). I enjoy reading as well, mostly non-fiction.",
-      "Currently looking for internship opportunities for Summer 2020, Summer 2021 and Fall 2021.",
+      "Currently looking for internship opportunities for Summer 2021 and Fall 2021.",
     ],
   },
   {
