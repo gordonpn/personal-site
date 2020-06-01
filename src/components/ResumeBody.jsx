@@ -129,7 +129,7 @@ const data = [
       ],
       Databases: ["mongodb", "postgresql", "redis"],
       "CI/CD": ["drone", "jenkins", "githubactions", "travisci"],
-      Platforms: ["docker", "linux", "ubuntu", "raspberrypi"],
+      Platforms: ["docker", "swarm", "linux", "ubuntu", "raspberrypi"],
       Tools: [
         "apachemaven",
         "cloudflare",
