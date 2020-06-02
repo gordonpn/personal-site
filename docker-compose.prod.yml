@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  frontend:
+    container_name: personal-site
+    image: gordonpn/personal-site:latest
+    expose:
+      - "80"
+    healthcheck:
+      test: curl --fail -s http://localhost:80/ || exit 1
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - traefik-public
+    labels:
+      - "traefik.enable=true"
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        order: start-first
+        failure_action: rollback
+        delay: 10s
+      rollback_config:
+        parallelism: 0
+        order: stop-first
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      # placement:
+      #   constraints:
+      #     - node.labels.main-node == true
+      labels:
+        - "traefik.enable=true"
+        - "traefik.constraint-label=traefik-public"
+        - "traefik.http.services.personal-site.loadbalancer.server.port=80"
+
+networks:
+  traefik-public:
+    external: true
+    driver: overlay
