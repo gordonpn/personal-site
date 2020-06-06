@@ -26,6 +26,24 @@ const useStyles = createUseStyles({
 
 const data = [
   {
+    name: "Internet Speed Tests Visualized",
+    description:
+      "Collects data on home internet speed tests and visualize them on a frontend. ",
+    link: "https://github.com/gordonpn/internet-speedtests-visualized",
+    url: "https://speed.gordon-pn.com",
+    screenshot:
+      "https://github.com/gordonpn/internet-speedtests-visualized/blob/master/docs/screenshot.png?raw=true",
+    tags: [
+      "JavaScript",
+      "Python",
+      "Node.js",
+      "React.js",
+      "Docker Swarm",
+      "MongoDB",
+      "Redis",
+    ],
+  },
+  {
     name: "YouTube Downloader",
     description:
       "Cross-platform YouTube downloader app, that downloads concurrently. Format in video or audio in MP3.",
@@ -75,24 +93,6 @@ const data = [
     screenshot:
       "https://github.com/gordonpn/moodle-scraper/blob/master/docs/screenshot.png?raw=true",
     tags: ["Python", "Docker"],
-  },
-  {
-    name: "Internet Speed Tests Visualized",
-    description:
-      "Collects data on home internet speed tests and visualize them on a frontend. ",
-    link: "https://github.com/gordonpn/internet-speedtests-visualized",
-    url: "https://speed.gordon-pn.com",
-    screenshot:
-      "https://github.com/gordonpn/internet-speedtests-visualized/blob/master/docs/screenshot.png?raw=true",
-    tags: [
-      "JavaScript",
-      "Python",
-      "Node.js",
-      "React.js",
-      "Docker Swarm",
-      "MongoDB",
-      "Redis",
-    ],
   },
   {
     name: "Music Video Generator",

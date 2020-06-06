@@ -7,6 +7,7 @@ import {
   Image,
   Label,
   List,
+  Popup,
   Segment,
 } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -115,31 +116,46 @@ const data = [
     header: "Technologies",
     icon: faCode,
     content: {
-      "Languages & Frameworks": [
-        "java",
-        "javascript",
-        "python",
-        "go",
-        "ruby",
-        "css3",
-        "electron",
-        "html5",
-        "node-dot-js",
-        "react",
+      "Languages, Frameworks & Libraries": [
+        { name: "Java", icon: "java" },
+        { name: "JavaScript", icon: "javascript" },
+        { name: "Python", icon: "python" },
+        { name: "Golang", icon: "go" },
+        { name: "Ruby", icon: "ruby" },
+        { name: "CSS", icon: "css3" },
+        { name: "Electron.js", icon: "electron" },
+        { name: "HTML5", icon: "html5" },
+        { name: "Node.js", icon: "node-dot-js" },
+        { name: "React.js", icon: "react" },
       ],
-      Databases: ["mongodb", "postgresql", "redis"],
-      "CI/CD": ["drone", "jenkins", "githubactions", "travisci"],
-      Platforms: ["docker", "swarm", "linux", "ubuntu", "raspberrypi"],
+      Databases: [
+        { name: "MongoDB", icon: "mongodb" },
+        { name: "PostgreSQL", icon: "postgresql" },
+        { name: "Redis", icon: "redis" },
+      ],
+      "CI/CD": [
+        { name: "Drone CI", icon: "drone" },
+        { name: "Jenkins", icon: "jenkins" },
+        { name: "GitHub Actions", icon: "githubactions" },
+        { name: "Travis CI", icon: "travisci" },
+      ],
+      Platforms: [
+        { name: "Docker", icon: "docker" },
+        { name: "Docker Swarm", icon: "swarm" },
+        { name: "Linux", icon: "linux" },
+        { name: "Ubuntu", icon: "ubuntu" },
+        { name: "Raspberry Pi", icon: "raspberrypi" },
+      ],
       Tools: [
-        "apachemaven",
-        "cloudflare",
-        "git",
-        "gulp",
-        "jetbrains",
-        "nginx",
-        "npm",
-        "vim",
-        "visualstudiocode",
+        { name: "Maven", icon: "apachemaven" },
+        { name: "Cloudflare", icon: "cloudflare" },
+        { name: "Git", icon: "git" },
+        { name: "Gulp.js", icon: "gulp" },
+        { name: "JetBrains", icon: "jetbrains" },
+        { name: "Nginx", icon: "nginx" },
+        { name: "npm", icon: "npm" },
+        { name: "Vim", icon: "vim" },
+        { name: "Visual Studio Code", icon: "visualstudiocode" },
       ],
     },
   },
@@ -266,8 +282,15 @@ const loadTech = Object.keys(data[SECTIONS.TECHNOLOGIES].content).map(
         <Image.Group size="mini">
           {data[SECTIONS.TECHNOLOGIES].content[category].map((item) => {
             return (
-              <Image
-                src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${item}.svg`}
+              <Popup
+                content={item.name}
+                trigger={
+                  <Image
+                    src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${item.icon}.svg`}
+                  />
+                }
+                position="bottom center"
+                size="tiny"
               />
             );
           })}
