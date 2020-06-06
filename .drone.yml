@@ -45,12 +45,8 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
-      - echo $DOCKER_TOKEN | docker login -u gordonpn --password-stdin
-      - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-      - docker buildx rm builder || true
-      - docker buildx create --name builder --driver docker-container --use
-      - docker buildx inspect --bootstrap
-      - docker buildx build -t gordonpn/personal-site:latest --platform linux/amd64,linux/arm64 --push .
+      - /drone/src/.docker/build.sh
+
 
 volumes:
   - name: dockersock
@@ -61,6 +57,9 @@ volumes:
 kind: pipeline
 type: docker
 name: security
+
+depends_on:
+  - build and publish docker image
 
 trigger:
   event: [ push, pull_request ]
@@ -79,7 +78,7 @@ steps:
         path: /var/run/docker.sock
     commands:
       - snyk test --severity-threshold=high
-      - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile
+      - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile --exclude-base-image-vulns
 
 volumes:
   - name: dockersock
@@ -105,7 +104,7 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
-      - /bin/sh /drone/src/.docker/deploy.sh
+      - /drone/src/.docker/deploy.sh
 
 volumes:
   - name: dockersock
