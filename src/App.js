@@ -9,7 +9,6 @@ import Spacer from "./components/Spacer";
 
 export default function App() {
   return (
-    // eslint-disable-next-line react/jsx-filename-extension
     <>
       <IntroBody />
       <ResumeBody />

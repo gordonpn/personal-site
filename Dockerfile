@@ -1,4 +1,4 @@
-FROM node:14.2-alpine as builder
+FROM buildkite/puppeteer as builder
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package*.json ./
