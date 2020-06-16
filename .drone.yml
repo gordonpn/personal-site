@@ -77,8 +77,8 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
-      - snyk test --severity-threshold=high
-      - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile --exclude-base-image-vulns
+      - snyk test --severity-threshold=high https://github.com/gordonpn/personal-site
+#      - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile --exclude-base-image-vulns
 
 volumes:
   - name: dockersock

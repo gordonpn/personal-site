@@ -26,6 +26,26 @@ const useStyles = createUseStyles({
 
 const data = [
   {
+    name: "Hot Red Flag Deals",
+    description:
+      "Software as a service scraping the crowdsourced Hot Deals forums and delivering newsletter emails on trending deals.",
+    link: "https://github.com/gordonpn/hot-flag-deals",
+    url: "https://deals.gordon-pn.com",
+    screenshot:
+      "https://github.com/gordonpn/hot-flag-deals/blob/master/docs/website.png?raw=true",
+    tags: [
+      "Go",
+      "PostgreSQL",
+      "Next.js",
+      "React.js",
+      "Docker Swarm",
+      "Redis",
+      "mjml",
+      "Material-UI",
+      "Nginx",
+    ],
+  },
+  {
     name: "Internet Speed Tests Visualized",
     description:
       "Collects data on home internet speed tests and visualize them on a frontend. ",
@@ -76,15 +96,6 @@ const data = [
     tags: ["Ruby"],
   },
   {
-    name: "Hot Red Flag Deals",
-    description:
-      "Software as a service scraping the crowdsourced Hot Deals forums and delivering newsletter emails on trending deals.",
-    link: "https://github.com/gordonpn/hot-flag-deals",
-    url: "",
-    screenshot: "",
-    tags: ["Go", "PostgreSQL", "Docker", "mjml"],
-  },
-  {
     name: "Moodle Scraper",
     description:
       "Automatically scrape and convert files from Concordia Moodle, saves time from manually browsing and downloading!",
@@ -116,7 +127,7 @@ const data = [
     url: "https://conventions.gordon-pn.com/",
     screenshot:
       "https://github.com/gordonpn/conventions-guide/blob/master/docs/screenshot.png?raw=true",
-    tags: ["Gatsby.js", "Docker Swarm", "NGINX"],
+    tags: ["Gatsby.js", "Docker Swarm", "Nginx"],
   },
   {
     name: "Personal Site",
@@ -125,7 +136,7 @@ const data = [
     url: "http://gordon-pn.com/",
     screenshot:
       "https://github.com/gordonpn/personal-site/blob/master/docs/screenshot.png?raw=true",
-    tags: ["JavaScript", "React.js", "Docker Swarm"],
+    tags: ["JavaScript", "React.js", "Docker Swarm", "Semantic UI"],
   },
 ];
 

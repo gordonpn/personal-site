@@ -127,6 +127,7 @@ const data = [
         { name: "HTML5", icon: "html5" },
         { name: "Node.js", icon: "node-dot-js" },
         { name: "React.js", icon: "react" },
+        { name: "Next.js", icon: "next-dot-js" },
       ],
       Databases: [
         { name: "MongoDB", icon: "mongodb" },
