@@ -20,19 +20,6 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-const useStyles = createUseStyles({
-  outerContainer: {
-    background:
-      "linear-gradient(0deg, rgba(254,211,159,1) 0%, rgba(246,238,201,1) 100%)",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    margin: 0,
-    width: "100vw",
-    height: "calc(10vh + max-content)",
-  },
-});
-
 const data = [
   {
     header: "Introduction",
@@ -185,6 +172,19 @@ const data = [
     ],
   },
 ];
+
+const useStyles = createUseStyles({
+  outerContainer: {
+    background:
+      "linear-gradient(0deg, rgba(254,211,159,1) 0%, rgba(246,238,201,1) 100%)",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    margin: 0,
+    width: "100vw",
+    height: "calc(10vh + max-content)",
+  },
+});
 
 const SECTIONS = {
   INTRODUCTION: 0,

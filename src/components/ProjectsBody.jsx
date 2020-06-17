@@ -11,19 +11,6 @@ import {
 } from "semantic-ui-react";
 import LazyLoad from "react-lazyload";
 
-const useStyles = createUseStyles({
-  outerContainer: {
-    background:
-      "linear-gradient(180deg, rgba(254,211,159,1) 0%, rgba(246,225,201,1) 100%)",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    margin: 0,
-    width: "100vw",
-    height: "calc(10vh + max-content)",
-  },
-});
-
 const data = [
   {
     name: "Hot Red Flag Deals",
@@ -139,6 +126,19 @@ const data = [
     tags: ["JavaScript", "React.js", "Docker Swarm", "Semantic UI"],
   },
 ];
+
+const useStyles = createUseStyles({
+  outerContainer: {
+    background:
+      "linear-gradient(180deg, rgba(254,211,159,1) 0%, rgba(246,225,201,1) 100%)",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    margin: 0,
+    width: "100vw",
+    height: "calc(10vh + max-content)",
+  },
+});
 
 const loadData = data.map((project) => {
   return (

@@ -10,13 +10,6 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { createUseStyles } from "react-jss";
 import * as PropTypes from "prop-types";
 
-const useStyles = createUseStyles({
-  icons: {
-    padding: "0.15em",
-    marginTop: "0.7rem",
-  },
-});
-
 const data = [
   { icon: faGithub, link: "https://github.com/gordonpn" },
   { icon: faFacebookMessenger, link: "https://www.messenger.com/t/Gordonpn" },
@@ -24,6 +17,13 @@ const data = [
   { icon: faEnvelope, link: "mailto:contact@gordon-pn.com" },
   { icon: faLinkedinIn, link: "https://www.linkedin.com/in/gordonpn" },
 ];
+
+const useStyles = createUseStyles({
+  icons: {
+    padding: "0.15em",
+    marginTop: "0.7rem",
+  },
+});
 
 export default function SocialIcons(props) {
   const classes = useStyles();
