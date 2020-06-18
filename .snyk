@@ -10,4 +10,8 @@ ignore:
     - '*':
         reason: No direct upgrade or patch
         expires: 2020-07-03T17:06:58.647Z
+  SNYK-JS-ELLIPTIC-571484:
+    - '*':
+        reason: There is no fixed version
+        expires: 2020-07-18T21:25:03.219Z
 patch: {}

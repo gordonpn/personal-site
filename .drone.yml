@@ -19,11 +19,10 @@ steps:
         {{build.link}}
       webhook:
         from_secret: SLACK_WEBHOOK_URL
-
 ---
 kind: pipeline
 type: docker
-name: build and publish docker image
+name: build and publish
 
 platform:
   os: linux
@@ -52,14 +51,10 @@ volumes:
   - name: dockersock
     host:
       path: /var/run/docker.sock
-
 ---
 kind: pipeline
 type: docker
 name: security
-
-depends_on:
-  - build and publish docker image
 
 trigger:
   event: [ push, pull_request ]
@@ -67,7 +62,21 @@ trigger:
     exclude:
       - master
 
+depends_on:
+  - build and publish
+
 steps:
+  - name: trivy scan
+    image: docker
+    environment:
+      GITHUB_TOKEN:
+        from_secret: GITHUB_TOKEN
+    commands:
+      - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL repo https://github.com/gordonpn/personal-site
+      - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL gordonpn/personal-site
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
   - name: snyk scan
     image: gordonpn/snyk-cli-drone
     environment:
@@ -138,6 +147,6 @@ steps:
       status: [ success, failure ]
 
 depends_on:
-  - build and publish docker image
+  - build and publish
   - security
   - deploy
