@@ -106,6 +106,7 @@ const data = [
       "Languages, Frameworks & Libraries": [
         { name: "Java", icon: "java" },
         { name: "JavaScript", icon: "javascript" },
+        { name: "TypeScript", icon: "typescript" },
         { name: "Python", icon: "python" },
         { name: "Golang", icon: "go" },
         { name: "Ruby", icon: "ruby" },

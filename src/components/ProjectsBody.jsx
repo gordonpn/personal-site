@@ -106,6 +106,16 @@ const data = [
     tags: ["JavaScript", "Node.js", "React.js"],
   },
   {
+    name: "Meta Search for Developers",
+    description:
+      "Search a curated subset of the web, tailored for learning developers.",
+    link: "https://github.com/gordonpn/dev-meta-search",
+    url: "https://search.gordon-pn.com/",
+    screenshot:
+      "https://github.com/gordonpn/dev-meta-search/blob/master/docs/screenshot.png?raw=true",
+    tags: ["TypeScript", "Next.js", "React.js", "Emotion.js", "Docker Swarm", "Nginx", "Chakra UI"],
+  },
+  {
     name: "Conventions Documentation",
     description:
       "Some documentation never hurt anybody! I wrote a bit about some project and Git conventions I personally like. " +

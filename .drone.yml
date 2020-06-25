@@ -46,7 +46,6 @@ steps:
     commands:
       - /drone/src/docker/build.sh
 
-
 volumes:
   - name: dockersock
     host:
@@ -68,6 +67,7 @@ depends_on:
 steps:
   - name: trivy scan
     image: docker
+    failure: ignore
     environment:
       GITHUB_TOKEN:
         from_secret: GITHUB_TOKEN
@@ -79,6 +79,7 @@ steps:
         path: /var/run/docker.sock
   - name: snyk scan
     image: gordonpn/snyk-cli-drone
+    failure: ignore
     environment:
       SNYK_TOKEN:
         from_secret: SNYK_TOKEN
