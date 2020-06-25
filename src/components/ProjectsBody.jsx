@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { createUseStyles } from "react-jss";
 import {
   Container,
@@ -10,132 +10,7 @@ import {
   Segment,
 } from "semantic-ui-react";
 import LazyLoad from "react-lazyload";
-
-const data = [
-  {
-    name: "Hot Red Flag Deals",
-    description:
-      "Software as a service scraping the crowdsourced Hot Deals forums and delivering newsletter emails on trending deals.",
-    link: "https://github.com/gordonpn/hot-flag-deals",
-    url: "https://deals.gordon-pn.com",
-    screenshot:
-      "https://github.com/gordonpn/hot-flag-deals/blob/master/docs/website.png?raw=true",
-    tags: [
-      "Go",
-      "PostgreSQL",
-      "Next.js",
-      "React.js",
-      "Docker Swarm",
-      "Redis",
-      "mjml",
-      "Material-UI",
-      "Nginx",
-    ],
-  },
-  {
-    name: "Internet Speed Tests Visualized",
-    description:
-      "Collects data on home internet speed tests and visualize them on a frontend. ",
-    link: "https://github.com/gordonpn/internet-speedtests-visualized",
-    url: "https://speed.gordon-pn.com",
-    screenshot:
-      "https://github.com/gordonpn/internet-speedtests-visualized/blob/master/docs/screenshot.png?raw=true",
-    tags: [
-      "JavaScript",
-      "Python",
-      "Node.js",
-      "React.js",
-      "Docker Swarm",
-      "MongoDB",
-      "Redis",
-    ],
-  },
-  {
-    name: "YouTube Downloader",
-    description:
-      "Cross-platform YouTube downloader app, that downloads concurrently. Format in video or audio in MP3.",
-    link: "https://github.com/gordonpn/youtube-downloader-electron",
-    url: "",
-    screenshot:
-      "https://github.com/gordonpn/youtube-downloader-electron/blob/master/doc/recording.gif?raw=true",
-    tags: ["JavaScript", "Node.js", "Electron.js", "Desktop"],
-  },
-  {
-    name: "Reddit Slack Bot",
-    description:
-      "I believe Reddit has a lot of good content, but it requires manual sifting through, with this bot I " +
-      "can get notification when a post reaches the 'hot' state directly into my private Slack workspace!",
-    link: "https://github.com/gordonpn/reddit-slack-bot",
-    url: "",
-    screenshot:
-      "https://github.com/gordonpn/reddit-slack-bot/blob/master/docs/screenshot.png?raw=true",
-    tags: ["Python", "Docker", "MongoDB"],
-  },
-  {
-    name: "JavaScript Boilerplate CLI Tool",
-    description:
-      "JavaScript projects have so much tooling! This is a command line tool that generates a Node.js or React.js project with some important tools. " +
-      "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
-    link: "https://github.com/gordonpn/create-boilerplate-cli",
-    url: "",
-    screenshot:
-      "https://github.com/gordonpn/create-boilerplate-cli/blob/master/docs/screenshot.png?raw=true",
-    tags: ["Ruby"],
-  },
-  {
-    name: "Moodle Scraper",
-    description:
-      "Automatically scrape and convert files from Concordia Moodle, saves time from manually browsing and downloading!",
-    link: "https://github.com/gordonpn/moodle-scraper",
-    url: "",
-    screenshot:
-      "https://github.com/gordonpn/moodle-scraper/blob/master/docs/screenshot.png?raw=true",
-    tags: ["Python", "Docker"],
-  },
-  {
-    name: "Music Video Generator",
-    description:
-      "Automagically generate a music video based a user input (song title and artist). " +
-      "We leveraged OctaveGroup's TouchTunes API for song information and ShutterStock's API for visual content. " +
-      "Then, Natural Language Processing (NLP) was used on the lyrics to process meaning and fetch relevant media. " +
-      "Team effort of four.",
-    link: "https://github.com/tiffzeng/conu-hacks-2020",
-    url: "https://devpost.com/software/picture-video-music-generator",
-    screenshot:
-      "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/920/419/datas/original.png",
-    tags: ["JavaScript", "Node.js", "React.js"],
-  },
-  {
-    name: "Meta Search for Developers",
-    description:
-      "Search a curated subset of the web, tailored for learning developers.",
-    link: "https://github.com/gordonpn/dev-meta-search",
-    url: "https://search.gordon-pn.com/",
-    screenshot:
-      "https://github.com/gordonpn/dev-meta-search/blob/master/docs/screenshot.png?raw=true",
-    tags: ["TypeScript", "Next.js", "React.js", "Emotion.js", "Docker Swarm", "Nginx", "Chakra UI"],
-  },
-  {
-    name: "Conventions Documentation",
-    description:
-      "Some documentation never hurt anybody! I wrote a bit about some project and Git conventions I personally like. " +
-      "I do my best to practice and follow.",
-    link: "https://github.com/gordonpn/conventions-guide",
-    url: "https://conventions.gordon-pn.com/",
-    screenshot:
-      "https://github.com/gordonpn/conventions-guide/blob/master/docs/screenshot.png?raw=true",
-    tags: ["Gatsby.js", "Docker Swarm", "Nginx"],
-  },
-  {
-    name: "Personal Site",
-    description: "This React.js site to to show my profile.",
-    link: "https://github.com/gordonpn/personal-site",
-    url: "http://gordon-pn.com/",
-    screenshot:
-      "https://github.com/gordonpn/personal-site/blob/master/docs/screenshot.png?raw=true",
-    tags: ["JavaScript", "React.js", "Docker Swarm", "Semantic UI"],
-  },
-];
+import { projects as data } from "../data/index";
 
 const useStyles = createUseStyles({
   outerContainer: {
@@ -152,7 +27,7 @@ const useStyles = createUseStyles({
 
 const loadData = data.map((project) => {
   return (
-    <>
+    <Fragment key={project.name}>
       <Grid.Column>
         <Header size="huge" attached="top">
           {project.name}
@@ -178,9 +53,9 @@ const loadData = data.map((project) => {
               <Label.Group size="mini">
                 {project.tags.map((value) => {
                   return (
-                    <>
+                    <Fragment key={value}>
                       <Label>{value}</Label>
-                    </>
+                    </Fragment>
                   );
                 })}
               </Label.Group>
@@ -210,7 +85,7 @@ const loadData = data.map((project) => {
           )}
         </Segment>
       </Grid.Column>
-    </>
+    </Fragment>
   );
 });
 

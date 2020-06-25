@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookMessenger,
@@ -31,7 +31,7 @@ export default function SocialIcons(props) {
 
   const loadData = data.map((socialItem) => {
     return (
-      <>
+      <Fragment key={socialItem.link}>
         <a href={socialItem.link} target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon
             icon={socialItem.icon}
@@ -39,7 +39,7 @@ export default function SocialIcons(props) {
             className={classes.icons}
           />
         </a>
-      </>
+      </Fragment>
     );
   });
 
