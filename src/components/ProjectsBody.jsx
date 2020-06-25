@@ -23,74 +23,89 @@ const useStyles = createUseStyles({
     width: "100vw",
     height: "calc(10vh + max-content)",
   },
-});
-
-const loadData = data.map((project) => {
-  return (
-    <Fragment key={project.name}>
-      <Grid.Column>
-        <Header size="huge" attached="top">
-          {project.name}
-        </Header>
-        <Segment raised attached>
-          {project.screenshot && (
-            <>
-              <a
-                href={project.url || project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LazyLoad once>
-                  <Image src={project.screenshot} />
-                </LazyLoad>
-              </a>
-              <Divider />
-            </>
-          )}
-          {project.description && (
-            <>
-              <p>{project.description}</p>
-              <Label.Group size="mini">
-                {project.tags.map((value) => {
-                  return (
-                    <Fragment key={value}>
-                      <Label>{value}</Label>
-                    </Fragment>
-                  );
-                })}
-              </Label.Group>
-              <Divider />
-            </>
-          )}
-          {project.url && (
-            <>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                {" Website"}
-              </a>
-            </>
-          )}
-          {project.link && (
-            <>
-              <p>
-                {"Source code on "}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </p>
-            </>
-          )}
-        </Segment>
-      </Grid.Column>
-    </Fragment>
-  );
+  screenshots: {
+    opacity: 1,
+    WebkitTransform: "scale(1)",
+    transform: "scale(1)",
+    WebkitTransition: ".3s ease-in-out",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      opacity: 0.5,
+      WebkitTransform: "scale(1.05)",
+      transform: "scale(1.05)",
+    },
+  },
 });
 
 export default function ProjectsBody() {
   const classes = useStyles();
+
+  const loadData = data.map((project) => {
+    return (
+      <Fragment key={project.name}>
+        <Grid.Column>
+          <Header size="huge" attached="top">
+            {project.name}
+          </Header>
+          <Segment raised attached>
+            {project.screenshot && (
+              <>
+                <a
+                  href={project.url || project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LazyLoad once>
+                    <Image
+                      className={classes.screenshots}
+                      src={project.screenshot}
+                    />
+                  </LazyLoad>
+                </a>
+                <Divider />
+              </>
+            )}
+            {project.description && (
+              <>
+                <p>{project.description}</p>
+                <Label.Group size="mini">
+                  {project.tags.map((value) => {
+                    return (
+                      <Fragment key={value}>
+                        <Label>{value}</Label>
+                      </Fragment>
+                    );
+                  })}
+                </Label.Group>
+                <Divider />
+              </>
+            )}
+            {project.url && (
+              <>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  {" Website"}
+                </a>
+              </>
+            )}
+            {project.link && (
+              <>
+                <p>
+                  {"Source code on "}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </p>
+              </>
+            )}
+          </Segment>
+        </Grid.Column>
+      </Fragment>
+    );
+  });
 
   return (
     <Container fluid className={classes.outerContainer}>
