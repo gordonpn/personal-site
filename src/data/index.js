@@ -47,14 +47,25 @@ export const projects = [
     ],
   },
   {
-    name: "YouTube Downloader",
+    name: "GitHub Stats",
     description:
-      "Cross-platform YouTube downloader app, that downloads concurrently. Format in video or audio in MP3.",
-    link: "https://github.com/gordonpn/youtube-downloader-electron",
-    url: "",
+      "Grabs information about my commits and languages from my GitHub Profile",
+    link: "https://github.com/gordonpn/github-stats",
+    url: "https://stats.gordon-pn.com/",
     screenshot:
-      "https://github.com/gordonpn/youtube-downloader-electron/blob/master/doc/recording.gif?raw=true",
-    tags: ["JavaScript", "Node.js", "Electron.js", "Desktop"],
+      "https://github.com/gordonpn/github-stats/blob/master/docs/screenshot.png?raw=true",
+    tags: [
+      "Flask",
+      "Python",
+      "MongoDB",
+      "TypeScript",
+      "Next.js",
+      "React.js",
+      "Emotion.js",
+      "Docker Swarm",
+      "Nginx",
+      "Chakra UI",
+    ],
   },
   {
     name: "Reddit Slack Bot",
@@ -66,17 +77,6 @@ export const projects = [
     screenshot:
       "https://github.com/gordonpn/reddit-slack-bot/blob/master/docs/screenshot.png?raw=true",
     tags: ["Python", "Docker", "MongoDB"],
-  },
-  {
-    name: "JavaScript Boilerplate CLI Tool",
-    description:
-      "JavaScript projects have so much tooling! This is a command line tool that generates a Node.js or React.js project with some important tools. " +
-      "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
-    link: "https://github.com/gordonpn/create-boilerplate-cli",
-    url: "",
-    screenshot:
-      "https://github.com/gordonpn/create-boilerplate-cli/blob/master/docs/screenshot.png?raw=true",
-    tags: ["Ruby"],
   },
   {
     name: "Moodle Scraper",
@@ -138,6 +138,27 @@ export const projects = [
     screenshot:
       "https://github.com/gordonpn/personal-site/blob/master/docs/screenshot.png?raw=true",
     tags: ["JavaScript", "React.js", "Docker Swarm", "Semantic UI"],
+  },
+  {
+    name: "JavaScript Boilerplate CLI Tool",
+    description:
+      "JavaScript projects have so much tooling! This is a command line tool that generates a Node.js or React.js project with some important tools. " +
+      "Such as, ESLint, Prettier, Stylelint, etc. Can be installed through Ruby Gems and currently has 400+ total downloads. 😲",
+    link: "https://github.com/gordonpn/create-boilerplate-cli",
+    url: "",
+    screenshot:
+      "https://github.com/gordonpn/create-boilerplate-cli/blob/master/docs/screenshot.png?raw=true",
+    tags: ["Ruby"],
+  },
+  {
+    name: "YouTube Downloader",
+    description:
+      "Cross-platform YouTube downloader app, that downloads concurrently. Format in video or audio in MP3.",
+    link: "https://github.com/gordonpn/youtube-downloader-electron",
+    url: "",
+    screenshot:
+      "https://github.com/gordonpn/youtube-downloader-electron/blob/master/doc/recording.gif?raw=true",
+    tags: ["JavaScript", "Node.js", "Electron.js", "Desktop"],
   },
 ];
 
@@ -277,7 +298,7 @@ export const resume = [
         degree: "Bachelor's of Software Engineering",
         institution: "Concordia University, Montreal, Canada",
         date: "2018-2022",
-        description: "Co-op Program, 3.15 GPA",
+        description: "Co-op Program",
       },
     ],
   },
