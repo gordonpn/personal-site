@@ -94,12 +94,30 @@ export const projects = [
       "Automagically generate a music video based a user input (song title and artist). " +
       "We leveraged OctaveGroup's TouchTunes API for song information and ShutterStock's API for visual content. " +
       "Then, Natural Language Processing (NLP) was used on the lyrics to process meaning and fetch relevant media. " +
-      "Team effort of four.",
+      "Team effort of four. This project won top 5 projects at ConUHacks 2020! 😲",
     link: "https://github.com/tiffzeng/conu-hacks-2020",
     url: "https://devpost.com/software/picture-video-music-generator",
     screenshot:
       "https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/920/419/datas/original.png",
     tags: ["JavaScript", "Node.js", "React.js"],
+  },
+  {
+    name: "Home Server Configurations and Scripts",
+    description:
+      "Configuration files for services running on my home server, as well as some utility scripts I've written to automate certain tasks.",
+    link: "https://github.com/gordonpn/server-services-configs",
+    url: "",
+    screenshot: "",
+    tags: ["Ubuntu", "Raspberry Pi", "Docker Swarm", "Bash"],
+  },
+  {
+    name: "dotfiles",
+    description: "My personal dotfiles, includes .zshrc, .vimrc, etc.",
+    link: "https://github.com/gordonpn/dotfiles",
+    url: "",
+    screenshot:
+      "https://github.com/gordonpn/dotfiles/blob/master/docs/dotfiles.png?raw=true",
+    tags: ["MacOS", "Ruby", "Bash"],
   },
   {
     name: "Meta Search for Developers",
