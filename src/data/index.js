@@ -68,6 +68,16 @@ export const projects = [
     ],
   },
   {
+    name: "Canadian University Software Engineering Conference Landing Page",
+    description:
+      "Landing page for CUSEC 2021, worked in a team of 2 developers.",
+    link: "https://github.com/cusec/2021",
+    url: "http://2021.cusec.net/",
+    screenshot:
+      "https://github.com/gordonpn/personal-site/blob/master/docs/cusec_screenshot.png?raw=true",
+    tags: ["Next.js", "Firebase", "TypeScript"],
+  },
+  {
     name: "Reddit Slack Bot",
     description:
       "I believe Reddit has a lot of good content, but it requires manual sifting through, with this bot I " +
@@ -187,7 +197,6 @@ export const resume = [
     content: [
       "I describe myself as a resourceful, detail-oriented self-starter with a great open-mind, a team player with a positive attitude. I love to collaborate, share ideas and knowledge. I am enthusiastic about automation and optimization. I am always looking forward to learning new skills and improve existing ones. I live for challenging problems. I feel the most satisfaction when I have the opportunity to learn and develop. I feel self-fulfillment when meeting the organization’s goals and customer expectations.",
       "When I am not working on software, I enjoy climbing hills on my road bike and rock climbing (bouldering). I enjoy reading as well, mostly non-fiction.",
-      "Currently looking for internship opportunities for Summer 2021 and Fall 2021.",
     ],
   },
   {
@@ -237,10 +246,10 @@ export const resume = [
     content: [
       {
         organization: "Canadian University Software Engineering Conference",
-        title: "Developer and Designer",
+        title: "Software Developer",
         date: "2020-05-01",
         description:
-          "In a team of two, in charge of the overall design of the conference, the landing page, as well as the web apps for CUSEC 2021.",
+          "In a team of two, in charge of the landing page, as well as the web apps for CUSEC 2021.",
       },
       {
         organization: "Code In The Dark Event by Osedea",
@@ -264,47 +273,154 @@ export const resume = [
     icon: faCode,
     content: {
       "Languages, Frameworks & Libraries": [
-        { name: "Java", icon: "java" },
-        { name: "JavaScript", icon: "javascript" },
-        { name: "TypeScript", icon: "typescript" },
-        { name: "Python", icon: "python" },
-        { name: "Golang", icon: "go" },
-        { name: "Ruby", icon: "ruby" },
-        { name: "CSS", icon: "css3" },
-        { name: "Electron.js", icon: "electron" },
-        { name: "HTML5", icon: "html5" },
-        { name: "Node.js", icon: "node-dot-js" },
-        { name: "React.js", icon: "react" },
-        { name: "Next.js", icon: "next-dot-js" },
+        {
+          name: "Java",
+          icon: "java",
+        },
+        {
+          name: "JavaScript",
+          icon: "javascript",
+        },
+        {
+          name: "TypeScript",
+          icon: "typescript",
+        },
+        {
+          name: "Python",
+          icon: "python",
+        },
+        {
+          name: "Golang",
+          icon: "go",
+        },
+        {
+          name: "Ruby",
+          icon: "ruby",
+        },
+        {
+          name: "CSS",
+          icon: "css3",
+        },
+        {
+          name: "Electron.js",
+          icon: "electron",
+        },
+        {
+          name: "HTML5",
+          icon: "html5",
+        },
+        {
+          name: "Node.js",
+          icon: "node-dot-js",
+        },
+        {
+          name: "React.js",
+          icon: "react",
+        },
+        {
+          name: "Next.js",
+          icon: "next-dot-js",
+        },
+        {
+          name: "PHP",
+          icon: "php",
+        },
       ],
       Databases: [
-        { name: "MongoDB", icon: "mongodb" },
-        { name: "PostgreSQL", icon: "postgresql" },
-        { name: "Redis", icon: "redis" },
+        {
+          name: "MongoDB",
+          icon: "mongodb",
+        },
+        {
+          name: "PostgreSQL",
+          icon: "postgresql",
+        },
+        {
+          name: "MySQL",
+          icon: "mysql",
+        },
+        {
+          name: "Redis",
+          icon: "redis",
+        },
       ],
       "CI/CD": [
-        { name: "Drone CI", icon: "drone" },
-        { name: "Jenkins", icon: "jenkins" },
-        { name: "GitHub Actions", icon: "githubactions" },
-        { name: "Travis CI", icon: "travisci" },
+        {
+          name: "Drone CI",
+          icon: "drone",
+        },
+        {
+          name: "Jenkins",
+          icon: "jenkins",
+        },
+        {
+          name: "GitHub Actions",
+          icon: "githubactions",
+        },
+        {
+          name: "Travis CI",
+          icon: "travisci",
+        },
       ],
       Platforms: [
-        { name: "Docker", icon: "docker" },
-        { name: "Docker Swarm", icon: "swarm" },
-        { name: "Linux", icon: "linux" },
-        { name: "Ubuntu", icon: "ubuntu" },
-        { name: "Raspberry Pi", icon: "raspberrypi" },
+        {
+          name: "Docker",
+          icon: "docker",
+        },
+        {
+          name: "Docker Swarm",
+          icon: "swarm",
+        },
+        {
+          name: "Linux",
+          icon: "linux",
+        },
+        {
+          name: "Ubuntu",
+          icon: "ubuntu",
+        },
+        {
+          name: "Raspberry Pi",
+          icon: "raspberrypi",
+        },
       ],
       Tools: [
-        { name: "Maven", icon: "apachemaven" },
-        { name: "Cloudflare", icon: "cloudflare" },
-        { name: "Git", icon: "git" },
-        { name: "Gulp.js", icon: "gulp" },
-        { name: "JetBrains", icon: "jetbrains" },
-        { name: "Nginx", icon: "nginx" },
-        { name: "npm", icon: "npm" },
-        { name: "Vim", icon: "vim" },
-        { name: "Visual Studio Code", icon: "visualstudiocode" },
+        {
+          name: "Maven",
+          icon: "apachemaven",
+        },
+        {
+          name: "Cloudflare",
+          icon: "cloudflare",
+        },
+        {
+          name: "Git",
+          icon: "git",
+        },
+        {
+          name: "Gulp.js",
+          icon: "gulp",
+        },
+        {
+          name: "JetBrains",
+          icon: "jetbrains",
+        },
+        {
+          name: "Nginx",
+          icon: "nginx",
+        },
+        {
+          name: "npm",
+          icon: "npm",
+        },
+        {
+          name: "Vim",
+          icon: "vim",
+        },
+        {
+          name: "Visual Studio Code",
+          icon: "visualstudiocode",
+        },
       ],
     },
   },
