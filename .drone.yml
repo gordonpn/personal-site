@@ -134,5 +134,4 @@ steps:
       status: [success, failure]
 
 depends_on:
-  - build and publish
   - deploy
