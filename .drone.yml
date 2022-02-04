@@ -3,8 +3,12 @@ kind: pipeline
 type: docker
 name: notification
 
+platform:
+  os: linux
+  arch: arm64
+
 trigger:
-  event: [ push, pull_request ]
+  event: [push, pull_request]
 
 steps:
   - name: slack before
@@ -26,10 +30,10 @@ name: build and publish
 
 platform:
   os: linux
-  arch: amd64
+  arch: arm64
 
 trigger:
-  event: [ push, pull_request ]
+  event: [push, pull_request]
   branch:
     exclude:
       - master
@@ -50,54 +54,62 @@ volumes:
   - name: dockersock
     host:
       path: /var/run/docker.sock
----
-kind: pipeline
-type: docker
-name: security
+# ---
+# kind: pipeline
+# type: docker
+# name: security
 
-trigger:
-  event: [ push, pull_request ]
-  branch:
-    exclude:
-      - master
+# platform:
+#   os: linux
+#   arch: arm64
 
-depends_on:
-  - build and publish
+# trigger:
+#   event: [push, pull_request]
+#   branch:
+#     exclude:
+#       - master
 
-steps:
-  - name: trivy scan
-    image: docker
-    failure: ignore
-    environment:
-      GITHUB_TOKEN:
-        from_secret: GITHUB_TOKEN
-    commands:
-      - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL repo https://github.com/gordonpn/personal-site
-      - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL gordonpn/personal-site
-    volumes:
-      - name: dockersock
-        path: /var/run/docker.sock
-  - name: snyk scan
-    image: gordonpn/snyk-cli-drone
-    failure: ignore
-    environment:
-      SNYK_TOKEN:
-        from_secret: SNYK_TOKEN
-    volumes:
-      - name: dockersock
-        path: /var/run/docker.sock
-    commands:
-      - snyk test --severity-threshold=high https://github.com/gordonpn/personal-site
-#      - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile --exclude-base-image-vulns
+# depends_on:
+#   - build and publish
 
-volumes:
-  - name: dockersock
-    host:
-      path: /var/run/docker.sock
+# steps:
+#   - name: trivy scan
+#     image: docker
+#     failure: ignore
+#     environment:
+#       GITHUB_TOKEN:
+#         from_secret: GITHUB_TOKEN
+#     commands:
+#       - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL repo https://github.com/gordonpn/personal-site
+#       - docker run aquasec/trivy --ignore-unfixed --no-progress --exit-code 1 --severity CRITICAL gordonpn/personal-site
+#     volumes:
+#       - name: dockersock
+#         path: /var/run/docker.sock
+#   - name: snyk scan
+#     image: gordonpn/snyk-cli-drone
+#     failure: ignore
+#     environment:
+#       SNYK_TOKEN:
+#         from_secret: SNYK_TOKEN
+#     volumes:
+#       - name: dockersock
+#         path: /var/run/docker.sock
+#     commands:
+#       - snyk test --severity-threshold=high https://github.com/gordonpn/personal-site
+# #      - snyk test --docker gordonpn/personal-site:latest --file=Dockerfile --exclude-base-image-vulns
+
+# volumes:
+#   - name: dockersock
+#     host:
+#       path: /var/run/docker.sock
 ---
 kind: pipeline
 type: docker
 name: deploy
+
+platform:
+  os: linux
+  arch: arm64
 
 trigger:
   event:
@@ -105,11 +117,12 @@ trigger:
   branch:
     - master
 
+node:
+  swarm-role: manager
+
 steps:
   - name: deploy prod
-    image: docker/compose:1.25.5
-    environment:
-      TZ: America/Montreal
+    image: linuxserver/docker-compose:version-1.29.2
     volumes:
       - name: dockersock
         path: /var/run/docker.sock
@@ -126,8 +139,12 @@ kind: pipeline
 type: docker
 name: notification after
 
+platform:
+  os: linux
+  arch: arm64
+
 trigger:
-  event: [ push, pull_request ]
+  event: [push, pull_request]
 
 steps:
   - name: slack after
@@ -145,7 +162,7 @@ steps:
       webhook:
         from_secret: SLACK_WEBHOOK_URL
     when:
-      status: [ success, failure ]
+      status: [success, failure]
 
 depends_on:
   - build and publish

@@ -8,7 +8,7 @@
 
 ---
 
-Live at https://gordon-pn.com
+Live at <https://gordon-pn.com>
 
 ## Technologies
 
