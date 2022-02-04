@@ -23,37 +23,6 @@ steps:
         {{build.link}}
       webhook:
         from_secret: SLACK_WEBHOOK_URL
----
-kind: pipeline
-type: docker
-name: build and publish
-
-platform:
-  os: linux
-  arch: arm64
-
-trigger:
-  event: [push, pull_request]
-  branch:
-    exclude:
-      - master
-
-steps:
-  - name: publish
-    image: gordonpn/docker-buildx-drone
-    environment:
-      DOCKER_TOKEN:
-        from_secret: DOCKER_TOKEN
-    volumes:
-      - name: dockersock
-        path: /var/run/docker.sock
-    commands:
-      - /drone/src/docker/build.sh
-
-volumes:
-  - name: dockersock
-    host:
-      path: /var/run/docker.sock
 # ---
 # kind: pipeline
 # type: docker
@@ -113,9 +82,9 @@ platform:
 
 trigger:
   event:
-    - push
-  branch:
-    - master
+    - promote
+  target:
+    - production
 
 node:
   swarm-role: manager
