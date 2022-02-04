@@ -166,5 +166,4 @@ steps:
 
 depends_on:
   - build and publish
-  - security
   - deploy
