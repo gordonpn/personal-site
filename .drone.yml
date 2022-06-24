@@ -96,7 +96,7 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
-      - /drone/src/docker/deploy.sh
+      - /bin/sh /drone/src/docker/deploy.sh
 
 volumes:
   - name: dockersock
