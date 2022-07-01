@@ -44,3 +44,20 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         if: always()
+  drone:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Drone CI
+        run: |
+          curl --request POST \
+          --url https://drone.gordon-pn.com/api/repos/${{ github.repository }}/builds \
+          --header 'Authorization: Bearer ${{ secrets.DRONE_AUTH_BEARER_TOKEN }}' \
+          --fail
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,workflow,job,took
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()

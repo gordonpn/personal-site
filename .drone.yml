@@ -3,10 +3,6 @@ kind: pipeline
 type: docker
 name: notification
 
-platform:
-  os: linux
-  arch: arm64
-
 trigger:
   event: [push, pull_request]
 
@@ -76,18 +72,9 @@ kind: pipeline
 type: docker
 name: deploy
 
-platform:
-  os: linux
-  arch: arm64
-
 trigger:
   event:
-    - promote
-  target:
-    - production
-
-node:
-  swarm-role: manager
+    - custom
 
 steps:
   - name: deploy prod
@@ -107,10 +94,6 @@ volumes:
 kind: pipeline
 type: docker
 name: notification after
-
-platform:
-  os: linux
-  arch: arm64
 
 trigger:
   event: [push, pull_request]
